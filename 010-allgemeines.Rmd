@@ -18,7 +18,7 @@ In diesem Kapitel klären wir einige Grundbegriffe auf der "Meta-Ebene". Wir bes
     - mengen- und zahlenmäßige Auswertung`r if(lec){": Aufdeckung von Tendenzen, Zusammenhängen etc. mit Hilfe von  statistischen Maßzahlen in Orientierung an die forschungsleitenden Fragen/Hypothesen"}`
 
 ## Überblick über den Prozess quantitativer Forschung
-- Forschungsrahmen klären: Forschungsfrage, Theorien, etc.`r if(lec){" Anekdote: Karl Popper in einer Vorlesung: *Nehmt ein Blatt Papier und beobachtet!*. Zuhörer: *WAS sollen wir beobachten?*"}`
+- Forschungsrahmen klären: Forschungsfrage, Theorien, etc.`r if(lec){" Anekdote: Karl Popper in einer Vorlesung: *Nehmt ein Blatt Papier und beobachtet!*. Zuhörer: *Was sollen wir beobachten?*"}`
 
 `r LINK("https://youtu.be/-D5Y7UG9xac")`
 
