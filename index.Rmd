@@ -1,0 +1,58 @@
+--- 
+title: "Quantitative Forschung für HRM"
+author: "Dominik E. Froehlich, www.dominikfroehlich.com"
+date: "2020"
+site: bookdown::bookdown_site
+output: bookdown::pdf_book
+documentclass: book
+bibliography: ["references.bib"]
+biblio-style: "apa.csl"
+link-citations: true
+---
+
+```{r include=FALSE}
+lec = T # TRUE = pdf
+options(digits = 2)
+library("htmltools")
+library("vembedr") #embedding videos
+
+LINK <- function(link){
+  # if (knitr::is_latex_output()){
+  #   print(paste("Video:",link))
+  # }
+  if (knitr::is_html_output()){
+    vembedr::embed_url(link)
+  } else {
+    paste("Video:",link)
+  }
+  
+}
+
+SOC <- function(task){
+
+    paste(task,"Poste deine Antwort")
+ 
+}
+
+
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Über dieses Buch
+In diesem Buch stelle ich das statistische Basiswerkzeug vor, um Analysen im HRM Bereich sinnvoll Software-gestützt auswerten zu können.
+
+Warum?
+
+Darum:
+![](flip/selbstbewertung.png)
+
+Weiterführende Ressourcen finden sich auf meiner [Homepage](https://dominikfroehlich.com/online-courses/) und dem [Agraphie Youtube Channel](https://www.youtube.com/channel/UCKg_rSScmeMkU0Jw6aDGdSw?view_as=subscriber)
+
+
+
+
+<!--
+This is how to embed videos:
+
+`r LINK("https://www.youtube.com/watch?v=JwZo28RKdvU")`
+-->

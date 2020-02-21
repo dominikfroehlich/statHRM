@@ -1,0 +1,143 @@
+# Das Beispielprojekt: Froehlich et al. 2014 / Datenimport
+
+## Dateien
+- Artikel
+- Fragebogen
+- Daten (gekürzt auf n = 100)
+
+## Übersicht
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+fro <- read.csv2(file = "Data//Froehlich et al 2014 Daten 100.csv")
+```
+
+**Variablen** im Datensatz:
+```{r}
+names(fro)
+```
+
+
+`r if(!lec){"-------"}`
+
+**Fälle** im Datensatz:
+```{r}
+length(fro)-1
+```
+
+## Daten importieren
+
+### in R
+Wir wollen den Beispieldatensatz (im .csv Format) laden. Dafür benutzen wir die Funktion read.csv2(). Um die weitere Arbeit zu erleichtern, weisen wir die Daten dem (neuen) Objekt "data" zu.
+
+```{r, echo=TRUE}
+data <- read.csv2(file = "Data//Froehlich et al 2014 Daten 100.csv")
+```
+
+Wir können uns die Spalten (=Variablen), die jetzt in dem Objekt gespeichert sind, mit der Funktion names() anzeigen lassen.
+
+```{r, echo=TRUE}
+names(data)
+```
+
+Die Anzahl der Reihen bekommt man mit length(), das für alle Objekttypen die Länge angibt.
+
+```{r, echo=TRUE}
+length(data)
+```
+
+
+Es gibt verschiedene Objekttypen, die in R verwendet werden. Unsere Datensätze werden wir meistens in sogenannten data.frames speichern.
+
+```{r, echo=TRUE}
+class(data)
+```
+
+Wichtig sind noch Vektoren, die eine Menge an Zeichen enthalten können (die z.B. mit c() kombiniert werden). Es können Zahlen ("numeric") und auch Text bzw. Zeichen ("character") zusammen abgespeichert werden. Ausgegeben kann der Inhalt von Objekten einfach werden, indem der Objektname angegeben wird oder print() benutzt wird.
+
+```{r, echo=TRUE}
+zahlen <- c(1, 2, 4)
+length(zahlen)
+zahlen
+print(zahlen)
+class(zahlen)
+```
+
+Beachte was passiert, wenn wir einen "character string" hinzufügen.
+
+```{r, echo=TRUE}
+zahlen <- c(zahlen, "fünf")
+length(zahlen)
+zahlen
+print(zahlen)
+class(zahlen)
+```
+
+Wir können auch einzelne Inhalte des Vektors aufrufen, indem wir den Index des gewünschten Inhalts in [] nach dem Objektnamen angeben.
+
+```{r, echo=TRUE}
+zahlen[3]
+```
+
+Natürlich lassen sich auch mehrere Punkte gleichzeitig ausgeben.
+
+```{r, echo=TRUE}
+zahlen[2:4] #2 bis 4
+zahlen[c(2, 4)] #2 und 4
+```
+
+Auch eine Negativauswahl ist möglich
+```{r}
+zahlen[-2]
+```
+
+
+Das funktioniert für alle Objekttypen mehr oder weniger gleich. Bei data.frames müssen wir nur sowohl die Reihe als auch die Spalte definieren.
+
+```{r}
+data[2, 5]
+data[1:3, 2:4]
+```
+
+Man könnte auch die Spaltennamen verwenden.
+
+```{r}
+data[1:5, c("DSEX", "DHIE")]
+```
+
+Man kann auch auf die Ausprägungen filtern bzw. mehrere Selektionen aufeinander "stapeln".
+
+```{r}
+data[data$DBAN =="5", 1:10]
+```
+
+
+Dateien in anderen Formaten können auch--ggf. durch den Einsatz von packages wie foreign--eingelesen werden.
+
+
+### in SPSS
+
+> TBA
+
+## Daten manipulieren
+Wenn wir mit Daten arbeiten, brauchen wir einige Datenmanipulations-Vorgänge immer wieder. Zum Beispiel wollen wir einige items zu einer Skala zusammenfügen (bzw. den Mittelwert der items bilden).
+
+
+### Items umkodieren
+- "umgedrehte Items"`r if(lec){": Bei Skalen werden oft einige Items *umgekehrt* erfragt. Die Items sollten aber vor der Analyse alle *in die selbe Richtung* gehen."}` 
+- Beispiel 5-Punkt Likert Skala`r if(lec){": 1->5, 2->4, 3->3, 4->2, 5->1"}`
+
+
+### in R
+```{r echo=TRUE}
+# (Optionales) sortieren von "data" nach Variablennamen
+data <- data[, order(names(data))]
+names(data)
+
+# Selektion einer Skala
+names(data[95:101])
+
+# Speicherung des Reihen-Mittelwerts in einer neuen Variable
+data$WC.mean <- rowMeans(data[95:101])
+head(data$WC.mean) #zeige die ersten Einträge an (zur Kontrolle)
+
+hist(data$WC.mean) # Darstellung im Histogramm
+```

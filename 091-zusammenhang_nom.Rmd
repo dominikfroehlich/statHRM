@@ -1,0 +1,74 @@
+# Nominale Zusammenhangsmaße
+
+## Vorbereitung
+- K13: 4
+- Video: https://www.khanacademy.org/math/statistics-probability/inference-categorical-data-chi-square-tests
+
+## Problemstellung
+Wir möchten eine Hypothese testen, die einen Zusammenhang zwischen zwei nominalen Variablen erwartet.
+
+## Anknüpfungspunkte
+- Skalenniveaus
+- Hypothesentest
+
+## Allgemeines
+- gemeinsame Verteilung mehrerer Variablen wird angegeben 
+- Zusammenhänge **nominalskalierter** Variablen werden dargestellt
+- Logik der nominalen Zusammenhangsmaßen`r if(lec){": eine Assoziation dann vor, wenn die konditionalen Verteilungen der abhängigen Variablen (=Spaltenhäufigkeitsverteilungen) sich voneinander unterscheiden"}`
+    - Kontingenztabelle darstellen
+    - Indifferenztabelle darstellen`r if(lec){": wie würde die Tabelle aussehen, wenn keine Assoziation bestünde"}`
+    - Differenzen feststellen
+    
+## $\chi^2$-basierte Zusammenhangsmaße
+Der $\chi^2$-Test ist ein Signifikanztest für nominalskalierte Merkmale.
+
+- Cramer's V`r if(lec){": liegt immer zwischen 0 und 1, aber Cramers V ist immer positiv und gibt keine Richtung des Zusammenhangs an; Interpretation: 0,1 - 0,3 schwacher Zusammenhang, 0,4 - 0,5 mittlerer Zusammenhang, > 0,5 starker Zusammenhang"}`
+- Phi-Koeffizient`r if(lec){": ist nicht Stichprobengrößen-abhängig, hat ein Vorzeichen und gibt Richtung des Zusammenhangs an, bei 0= kein Zusammenhang, in Spezialfällen kann Phi auch größer als 1 werden (unerwünscht!) - sollte nur für 2X2 Tabellen berechnet werden."}`
+- Pearson's Kontingenzkoeffizient C`r if(lec){": Praktisch immer kleiner als 1, wiewohl mit wachsender Anzahl der Spalten und Zeilen Annäherung an 1, gibt keine Richtung des Zusammenhangs an"}`
+
+## Voraussetzungen
+- n > 50`r if(lec){": Die Stichprobe sollte grösser als 50 sein. Achtung: Will man Chi-Quadrat für einen Assoziationskoeffizienten nutzen, dann ist zu beachten, dass Chi-Quadrat mit n zusammenhängt.
+Verdoppelt man z.B. alle Zellhäufigkeiten (und damit auch n), dann verdoppelt sich auch der Wert von Chi-Quadrat! Man muss also für n korrigieren."}`
+- Die erwarteten Häufigkeiten sollten in jeder Zelle grösser als 5 sein
+<!-- - Die Freiheitsgrade sollten höher als 1 sein  -->
+
+## Beispiel Kreuztabelle und Cramer's V (crosstable1.csv)
+
+```{r}
+#function from https://www.r-bloggers.com/example-8-39-calculating-cramers-v/
+cv.test = function(x,y) {
+  CV = sqrt(chisq.test(x, y, correct=FALSE)$statistic /
+    (length(x) * (min(length(unique(x)),length(unique(y))) - 1)))
+  #print.noquote("Cramér V / Phi:")
+  return(as.numeric(CV))
+}
+
+#Create data
+set.seed(3)
+org <- sample(x = c(0, 1, 2, 3), size = 200, replace = TRUE)
+set.seed(37)
+sex <- sample(x = c(0, 1), size = 200, replace = TRUE)
+df <- data.frame(org,sex)
+names(df) <- c("org", "sex")
+write.csv2(df, file = "Data//crosstable1.csv")
+```
+
+Erstellung der Kreuztabelle:
+```{r}
+#Crosstable
+require(gmodels)
+CrossTable(x = df$org, y = df$sex)
+```
+
+`r if(!lec){"-------"}` 
+
+Berechnung Cramer's V:
+```{r}
+#Cramer's V
+with(df, cv.test(df$org, df$sex))
+```
+
+$$ V = \sqrt{\frac{\chi^2/n}{min(k-1, r-1)}}  $$
+
+
+

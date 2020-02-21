@@ -1,0 +1,36 @@
+# Ordinale Zusammenhangsmaße / Rangkorrelation
+
+## Problemstellung
+Der Zusammenhang zwischen Variablen, die mindestens ordinales Skalenniveau haben, soll festgestellt werden.
+
+**Beispiel:** Wie hängt die *Zeit der Prüfungsvorbereitung in Stunden* mit der *Endnote* zusammen.
+
+## Anknüpfungspunkte
+- Skalenniveaus (ordinal)
+- Zusammenhangsmaße
+- Signifikanztests
+
+## Allgemeines
+- Rangordnung ist bei vielen Maßzahlen ordinaler Assoziation relevant
+- Verschiedene Maße
+    - **Spearmans Rangkorrelationskoeffizient (rho)**
+    - Tau-b
+    - Goodman & Kruskals Gamma
+- Symmetrische Maßzahlen`r if(lec){": zwischen -1 und 1"}` 
+- Stärke`r if(lec){":
+    - (0.0, 0.2] = kein bzw. geringer Zusammenhang
+    - (0.2, 0.5] = schwacher bzw. mäßiger Zusammenhang
+    - (0.5, 0.8] = deutlicher Zusammenhang
+    - (0.8, 1.0] = starker Zusammenhang"}`
+
+## Beispiel
+TBA
+
+
+`r if(!lec){"
+-------
+
+Ende der Lektion.
+"}`
+
+

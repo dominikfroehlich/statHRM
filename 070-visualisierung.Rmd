@@ -1,0 +1,90 @@
+# Visualisierung
+
+```{r}
+fro <- read.csv2(file = "Data//Froehlich et al 2014 Daten 100.csv")
+library(ggplot2)
+
+fro <- fro[order(names(fro))]
+
+fro$dp <- rowMeans(x = fro[13:22], na.rm = T)
+fro$sd <- rowMeans(x = fro[23:32], na.rm = T)
+```
+
+## Allgemeines
+Jede Darstellung sollte selbsterklärend sein -- daher ist auf aussagekräftige Titel, Achsenbeschriftungen und Legenden zu achten! Generell sollte auf Lesbarkeit optimiert werden und die Kernaussage bzw. das Ziel der Darstellung klar erkennbar sein (und eventuell im Titel direkt benannt werden). [Achtung, das passiert auf Grund von Platzlimitationen in diesem Skriptum nicht immer!]
+
+## Histogramm
+Ein Histogramm gibt die Häufigkeitsverteilung einer Variablen wieder. Dafür werden die Daten in Klassen (bins) eingeteilt--die Festsetzung der bins verändert die Darstellung teilweise enorm.
+
+`r if(!lec){"-------"}`
+
+```{r}
+library(gridExtra)
+
+p1 <- qplot(dp, data = fro, geom = "histogram", binwidth = 2)
+p2 <- qplot(dp, data = fro, geom = "histogram", binwidth = 1)
+p3 <- qplot(dp, data = fro, geom = "histogram", binwidth = 0.5)
+p4 <- qplot(dp, data = fro, geom = "histogram", binwidth = 0.1)
+
+grid.arrange(p1, p2, p3, p4, nrow=2, ncol=2)
+```
+
+## Boxplot
+Ein Boxplot ist eine kompakte Darstellung der Quartile einer Variable durch eine *Box* und *Whisker* (daher wird diese Darstellung auch Box-and-Whisker-Plot genannt). Es gibt verschiedene Varianten, die folgende verwendet folgende Definitionen:
+
+- Die Striche gehen von $Q1 - 1.5*IQR$ bis $Q3 + 1.5*IQR$.
+- Die Punkte sind "Ausreißer" (außerhalb der von den Strichen erfassten Daten)s
+- Die Boxen definieren Q1 bzw. Q3 
+- Der Median (Q2) ist der (horizontale) Balken innerhalb der Box
+
+```{r, fig.height=2}
+ggplot(fro, aes(x= as.factor(DSEX), y = dp, color = as.factor(DSEX))) +
+  geom_boxplot()
+```
+
+## Scatterplot
+Der Scatterplot stellt eine Punktwolke basierend auf 2 kontinuierlichen Variablen dar.
+
+```{r, fig.height=2}
+p <- ggplot(fro, aes(x = dp, y = sd)) +
+  geom_point(shape = 1)
+p
+```
+
+`r if(!lec){"-------"}`
+
+Die Regressionsgerade kann zusätzlich eingezeichnet werden.
+
+```{r, fig.height=2}
+p +   geom_smooth(method = "lm", se = F)
+```
+
+`r if(!lec){"-------"}`
+
+Der Konfidenzintervall kann zusätzlich eingezeichnet werden.
+
+```{r, fig.height=2}
+p +   geom_smooth(method = "lm")
+```
+
+## Bar-Chart
+
+```{r, fig.height=2}
+p <- ggplot(fro, aes(x = DBAN)) +
+  geom_bar() +
+  ggtitle("Anzahl der Befragten pro Bank") +
+  labs(y="Anzahl", x = "Bank No.")
+p
+```
+
+`r if(!lec){"-------"}`
+
+Es sollten keine Verzerrungen der Proportionen entstehen:
+
+```{r, fig.height=2}
+p + coord_cartesian(ylim = c(10, 55)) 
+```
+
+
+
+

@@ -1,0 +1,97 @@
+# Wichtige Begriffe
+
+`r LINK("https://www.youtube.com/watch?v=G0MIrYZ29dE&feature=youtu.be&7qj1tHFjpXuyr=")` 
+
+## Allgemeines
+- Empirie: Auf Erfahrung, 'der Realität' beruhend.
+- Empirische Sozialforschung: systematische und reflektierte Erfassung und Interpretation von sozialen Tatbeständen (vgl. Kleining 2001, p. 209)
+- Generierung von Wissen
+    - Induktion: Von Beobachtung zur allgemeinen Aussage
+    - Deduktion: Von Theorie zu Einzelaussage
+    - Abduktion: Von einer Beobachtung wird auf Gesetzmäßigkeit UND Ursache geschlossen   
+- Untersuchungsgegenstand: Um was geht es in diesem Forschungsprojekt?
+- Gegenstandsangemessenheit: Forschung soll sich  auf eine angemessene und verständnisorientierte Art und Weise dem Feld annähern.
+
+## Datenerhebung
+- Untersuchungsobjekt: Wer wird untersucht?
+    - Grundgesamtheit`r if(lec){"(engl. population): Unter einer Grundgesamtheit oder Population versteht man die Menge aller potenziellen Untersuchungsobjekte, über die man durch eine  Erhebung Aussagen machen möchte (sachlich, räumlich, zeitlich)."}`
+          - Parameter`r if(lec){": ein Parameter beschreibt die Grundgesamtheit (z.B. Mittelwert der Grundgesamtheit)."}`
+    - Stichprobe`r if(lec){"(engl. sample): Eine Stichprobe ist eine beschränkte Auswahl aus der Grundgesamtheit. Ziel: auf der Basis der Stichprobenergebnisse Aussagen über die Grundgesamtheit zu machen. Die Stichprobe muss repräsentativ für die Grundgesamtheit sein (siehe Stichprobenziehung)."}`
+          - Statistik`r if(lec){": eine Statistik beschreibt die Stichprobe (z.B. Mittelwert der Stichprobe)."}`
+- Stichprobenziehung`r if(lec){": Ein Stichprobenverfahren ist charakterisierbar durch eine explizite Vorschrift, die festlegt, in welcher Weise Elemente der Grundgesamtheit ausgewählt werden."}`
+    - Ziel`r if(lec){": In quantitativen Studien hat die Stichprobenziehung Repräsentativität (z.B. basierend auf demografischer Merkmale) zum Ziel. Qualitativ geht es eher um inhaltliche Repräsentativität"}`
+    - Fall Gallup gegen Literary Digest`r if(lec){": Vereinigte Staaten, 1930er Jahre: Die Zeitschrift Literary Digest hat bei den Wahlen 1936 zehn Millionen Probestimmzettel an Amerikaner verschickt, deren Adressen im Verzeichnis Telephon and Auto eingetragen waren - 2,4 Millionen Stimmzettel kamen zurück. Ergebnis : Landon wird Präsident. George Gallup wählte eine andere Methode: er bildete eine relativ kleine Stichprobe, die in wesentlichen Merkmalen einem verkleinerten Abbild der amerikanischen Wählerschaft entsprach - Ergebnis: Franklin D. Roosevelt wird Präsident! Gallup traf ins Schwarze und Literary Digest unterschätzte die Stimmenzahl Roosevelts um 19%."}`
+- Primär vs. Sekundärstatistik`r if(lec){": Primärstatistiken (Field Research) zeichnen sich dadurch aus, dass ihnen eine eigene Erhebung zugrunde liegt. Diese Erhebungen ermöglichen es dem Statistiker, die Fragestellung hinsichtlich Erhebungszweck, Aktualität und Erfordernisse der Datenerfassung. Sekundärstatistiken sind erneute Analysen bereits durchgeführter Untersuchungen"}`
+
+## Variablen und Fälle
+- Variablen`r if(lec){": Eine Variable ist ein Name für ein Merkmal oder eine Eigenschaft von Personen, Gruppen, Organisationen oder anderen Merkmalsträgern. Beispiele für Variablen: Geschlecht, Bildungsgrad von Personen, die soziale Integration von Gruppen, die Dauer von Ehen, die Regierungsform von Staaten, die Seitenzahl eines Buches. In der Datentabelle stehen sie typischer Weise in den Spalten."}`
+    - unabhängige Variable`r if(lec){": Jene Variable, die als verursachender Faktor in einer Hypothese betrachtet wird, heißt unabhängige Variable (independent variable, IV)."}`
+    - abhängige Variable`r if(lec){": Jene Variable, die als bewirkter Faktor in einer Hypothese betrachtet wird, heißt abhängige Variable (dependent variable, DV).
+    
+        - Beispiele:
+            -Raumtemperatur (unabhängige Variable) und das damit korrelierende Wohlbefinden (abhängige Variable) einer Testperson
+            - Erziehungsstil (unabhängige Variable) und Berufswahl (abhängige Variable)"}`
+- Fälle`r if(lec){": Fälle stellen z.B. die befragten Personen dar. In der Datentabelle stehen sie typischer Weise in den Reihen."}`
+    - Merkmalsträger`r if(lec){": Personen haben individuelle Merkmale; Bsp: Geschlecht, Alter, Bildung, Familienstand, sozialer Status, Einkommen. Personenmehrheiten (Kollektive) haben Kollektivmerkmale. Wahlsprengel V hat das Merkmal Stimmenanteil Partei Y, Großstadt W hat das Merkmal Kriminalitätsrate, Staat X hat das Merkmal politische Verfassung, Haushalt Z hat das Merkmal Einkommen"}`
+- Wert = (Merkmals)Ausprägung`r if(lec){":
+        - Jede Variable hat mindestens zwei Ausprägungen.
+        - Die Ausprägungen müssen auf einer Dimension liegen.
+        - disjunkt, d.h. sie dürfen sich nicht überlappen.
+        - erschöpfend, d.h. jeder Merkmalsträger muss einer Kategorie zugewiesen werden"}`
+ 
+`r if(!lec){"-------"}` 
+
+Ein Auszug aus der Datentabelle des Beispielartikels:
+
+```{r, echo=FALSE, message=TRUE, warning=TRUE}
+fro <- read.csv2(file = "Data//Froehlich et al 2014 Daten 100.csv")
+print(fro[1:3, c("DSEX", "DAGE", "LADP1")])
+``` 
+
+> **Frage:** Was sind die Variablen/Fälle/Werte in diesem Ausschnitt?
+    
+`r if(!lec){"-------"}`
+    
+- Item vs. Skala bzw. manifeste vs. latente Variable`r if(lec){": Bei latenten Variablen handelt es sich um nicht direkt beobachtbare, sozusagen versteckte Phänomene. Zum Beispiel kann die Persönlichkeit einer Person nicht direkt und eindeutig beobachtet werden oder auch nur durch eine einzelne Frage erfragt werden. Persönlichkeitstests sind daher typischer weise recht lang--viele **items** bzw. beobachtbare Elemente, d.h. **manifeste Variablen**, sind notwendig, um das latente Konstrukut Persönlichkeit zu messen. Diese items werden in **Skalen** bzw. Item-Batterien zusammengefasst.
+
+Beispiel: Man füllt einen Persönlichkeits-Fragebogen mit zehn Fragen aus. Diese zehn Fragen werden bei der Auswertung dann kombiniert (z.B. durch das bilden einer Summe oder des Mittelwerts), um z.B. den Zusammenhang zwischen Alter (einer direkt beobachtbaren, manifesten Variable) und Persönlichkeit zu erforschen.
+
+Andere Erklärung: Die manifeste Variable ist eine festgesetzte Variable, die man anhand einer Frage beantworten kann. (In welchem Semester studierst du?) Sie ist eindeutig erfassbar.Die latente Variable ist eine nicht einfach ersichtliche Variable. Sie muss durch mehrere zusammenhängende Fragen beantworten werden. (Am Beispiel der Motivation, die nicht offensichtlich beobachtbar ist, könnten Fragen zum Lernverhalten gestellt werden.) Daher ist die latente Variable nicht eindeutig erfassbar."}`
+
+## Datenauswertung
+
+- Hypothese`r if(lec){": Eine Hypothese ist die Behauptung eines vermuteten **Zusammenhangs** zwischen zwei (oder mehr) Variablen. Diese müssen überprüfbar sein. Keine wissenschaftlichen Hypothesen sind Beschreibungen (Petra ist 1,70m groß), Klassifikationen (Wien ist in 23 Bezirke eingeteilt), Analogien (Liebe ist wie das Eintauchen im Ozean), Orientierungsaussagen (das Sein bestimmt das Bewusstsein), normative Aussagen (Wenn Angestellte viel Verantwortung tragen, dann sollen sie auch gut bezahlt werden.)"}`
+    - Unterschiedshypothese`r if(lec){": Ist die unabhängige Variable dichotom (d.h. besitzt sie nur zwei Ausprägungen), so kann der Zusammenhang zwischen den beiden Variablen als Wenn-dann-Hypothese formuliert werden."}`
+    - Zusammenhangshypothese`r if(lec){": Sind die Ausprägungen sowohl der unabhängigen als auch der abhängigen Variablen als Rangfolge interpretierbar, so kann der Zusammenhang als Je-desto-Hypothese formuliert werden."}`
+    - Tautologien`r if(lec){": Tautologie (griech. 'Wiederholung von bereits Gesagtem') bezeichnet eine Aussage, die immer wahr ist. Tautologien (=allgemein gültige Aussagen) sind ein Konzept aus der Logik. Eine Tautologie ist eine Aussage oder logische Formel, die in jeder Situation bzw. variablen Belegung wahr ist.
+        - Wenn der Hahn kräht auf dem Mist, dann ändert sich das Wetter oder es bleibt wie es ist. (Hier wird vermeintlich eine Aussage getroffen, über die Fähigkeit eines Hahnes das Wetter zu ändern. Betrachtet man den zweiten Teil des Satzes genau, sieht man dass das **oder** beide möglichen Fälle (positiv und negativ) abdeckt. Somit ist dieser Teil des Satzes immer wahr. Bei dem ersten Teil des Satzes handelt es sich um eine Implikation. Eine Implikation ist dann wahr, wenn die Grundaussage falsch ist, hier wenn der Hahn nicht auf dem Mist krähen würde oder wenn beide Teile der Aussage wahr sind. Wie bereits geklärt der zweite Teil ist immer wahr und somit ist die gesamte Aussage auch immer wahr, daher ist sie eine Tautologie.)
+        - Je schwächer die Beschäftigungsdynamik desto höher die Arbeitslosigkeit. Wenn negative Kindheitserfahrung, dann neurotische Symptome.
+        - Wenn keine negativen Kindheitserfahrungen und trotzdem neurotische Symptome - dann liegt Verdrängung vor.
+        - Alle Menschen sind Menschen
+        - Heute ist Mittwoch oder es ist nicht Mittwoch"}`
+        
+## Übung mit Software
+- Öffne den Datensatz "Froehlich et al 2014 Daten 100.sav" mit einem Statistik-Programm deiner Wahl.
+- Identifiziere Variablen, Fälle und Werte.
+
+
+## Wiederholungsfragen
+- Definiere Grundgesamtheit und Stichprobe.
+- Unterscheide zwischen Variablen und Fällen.
+- Definiere abhängige/unabhängige und latente/manifeste Variablen.
+- Was macht gute Hypothesen aus?
+- Denke an eine Politik-Meinungsumfrage im Rahmen einer kommenden Wahl in Österreich (Bitte antworte in 1-2 Sätzen pro Unter-Frage.). 
+    - (a) Was ist hier die Grundgesamtheit ...
+    - (b)...und wie wird sie formal definiert?
+    - (c) Was ist die Stichprobe...
+    - (d)...und wie wird sie formal definiert?
+
+
+
+    
+    `r if(!lec){"
+-------
+
+Ende der Lektion.
+"}`
+

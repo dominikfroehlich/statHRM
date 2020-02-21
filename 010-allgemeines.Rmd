@@ -1,0 +1,55 @@
+# Allgemeines
+
+In diesem Kapitel klären wir einige Grundbegriffe auf der "Meta-Eben". Wir beschäftigen uns hier mit den "großen" Fragen wie "Was können wir durch Statistik überhaupt wissen"?
+
+## Grundsätzliches
+
+- (Neo)Positivismus: auch im menschlichen Bereich können Abläufe, Handlungen und Ereignisse, wie objektive Fakten erfasst werden`r if(lec){", obwohl die Gesetzmäßigkeiten in den Sozialwissenschaften selten so präzise sind wie in den Naturwissenschaften."}`
+
+`r LINK("https://www.youtube.com/watch?v=kCJ52tpjG_Y")`
+
+- Empirismus`r if(lec){": Intersubjektivität der Erkenntnis - Empirische Aussagen sind solche, deren Wahrheit od. Falschheit nur aufgrund von Erfahrungen gemacht werden können"}` 
+- Wissenschaftlichkeit der Philosophie`r if(lec){": Die Philosophie sorgt für die Reinigung der Wissenschaft von metaphysischen Elementen und die Synthese der Wissenschaften durch ein umfassendes, widerspruchsfreies System der Erkenntnis"}`
+- Einheit der Wissenschaft`r if(lec){": Grundsätzliche Einheit der Wissenschaftsmethodik in Bezug auf a) die Rolle der Erfahrung als einzige Instanz zur Überprüfung von Erkenntnis b) terminologische Exaktheit als Voraussetzung eindeutiger Kommunikation c) die Formulierung allgemeiner Gesetze und Theorien als Instrumente der Prognose und der nicht-metaphysisch-theologischen Erklärung."}`
+
+### Definition Statistik
+- Statistik = Wissenschaft von der **mengen- und zahlenmäßigen Erfassung** und **Auswertung** von Daten.[@Langenscheidt2017]
+    - mengen- und zahlenmäßige Erfassung`r if(lec){": Aufgegriffen werden quantifizierbare Ausdrucksformen von Phänomenen, z.B. die Zahl der Auszubildenden im IT-Bereich; Die Mathematik fungiert dabei als Vermittlungssprache; Bedingung:  Das Phänomen muss sich auch zahlenmäßig ausdrücken lassen"}`
+    - mengen- und zahlenmäßige Auswertung`r if(lec){": Aufdeckung von Tendenzen, Zusammenhängen etc. mit Hilfe von  statistischen Maßzahlen in Orientierung an die forschungsleitenden Fragen/Hypothesen"}`
+
+## Überblick über den Prozess quantitativer Forschung
+- Forschungsrahmen klären: Forschungsfrage, Theorien, etc.`r if(lec){" Anekdote: Karl Popper in einer Vorlesung: *Nehmt ein Blatt Papier und beobachtet!*. Zuhörer: *WAS sollen wir beobachten?*"}`
+
+`r LINK("https://youtu.be/-D5Y7UG9xac")`
+
+- Theoretische Grundlagen klären
+    - Hypothesen ableiten
+- Operationalisierung ("Gegenstandsbenennung"[@Atteslander2003]) und Planung der Untersuchung
+- **Daten sammeln**
+    - Erhebungsinstrumente erstellen, Quantifizierung`r if(lec){" (Achtung, die Quantifizierung stellt eine enorme Reduktion der Wirklichkeit dar!)"}`
+    - Erhebung durchführen
+    - Daten aufbereiten`r if(lec){": Fehlerkontrolle, Fehlerbereinigung"}`
+- **Daten auswerten** / Hypothesen testen`r if(lec){": Bildung von Indizes, Itemanalysen, Skalenwerten; Univariate Statistiken; Zusammenhangsanalysen"}`
+- **Ergebnisse interpretieren** 
+- Berichterstattung
+
+## Warum Statistik?
+- Publizierte Statistiken interpretieren und beurteilen
+Beispiel: [Der Fall Sally Clark](https://en.wikipedia.org/wiki/Sally_Clark)
+
+`r LINK("https://www.youtube.com/watch?v=HqH-6yw60m0")` 
+
+> **Frage:** Welche anderen Beispiele fallen dir ein?
+
+- Eigene Statistiken produzieren (für die Abschlussarbeit!)
+`r if(lec){"Nicht nur als Konsument fremder Arbeiten, sondern auch in der Rolle des Produzenten empirischer Ergebnisse ist die genaue Kenntnis der Prinzipien, Anwendungsvorraussetzungen und Probleme der wichtigsten statistischen Verfahren unverzichtbar!"}`
+
+## Ziele der Statistik
+
+- Deskription (Beschreiben)`r if(lec){": Beschreiben von Häufigkeiten von Ausprägungen der betrachteten Merkmale; Grafische Datenaufbereitung; Gewinnung erster Eindrücke bzw. Ideen zur weiteren Analyse; Datenvalidierung: Erkennen von Fehlern im Datensatz"}`
+- Exploration (Suchen)`r if(lec){": Auffinden von Strukturen in den Daten; Formulierung von Hypothesen für das den Daten zugrunde liegende stochastische (=vom Zufall abhängig) Modell"}`
+- Inferenz (Schließen)`r if(lec){": Schlüsse von einer Stichprobe auf die Grundgesamtheit ziehen"}`
+
+![](flip/inferenz.png)
+
+> **Frage:** Welche Beispiele fallen dir im Rahmen von HRM für diese Ziele der Statistik ein?

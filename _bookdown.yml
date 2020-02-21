@@ -1,0 +1,6 @@
+book_filename: "reflektion"
+language:
+  ui:
+    chapter_name: "Kapitel "
+lang: "de-DE"    
+delete_merged_file: true

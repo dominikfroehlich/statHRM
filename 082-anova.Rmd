@@ -1,0 +1,157 @@
+# Varianzanalyse (ANOVA)
+
+`r LINK("https://youtu.be/Ds92CMNRBjQ")`
+
+## Problemstellung
+Wir wollen feststellen, ob es hinsichtlich des *Lernklimas* Unterschiede zwischen den fünf teilnehmenden Organisationen gibt.
+
+> **Frage:** Wieso ist hier ein t-Test nicht zielführend?
+
+## Anknüpfungspunkte
+- Hypothesentest
+- t-Test
+
+## Allgemeines
+- *Mehrere* Gruppenmittelwerte werden verglichen
+- H0`r if(lec){": In der Grundgesamtheit sind alle Mittelwerte gleich"}`
+- H1`r if(lec){": In der Grundgesamtheit sind nicht alle Mittelwerte gleich"}`
+- Grundprinzip
+    - Varianzen innerhalb der Gruppen berechnen`r if(lec){": Streuung der Werte innerhalb der Gruppen um den jeweiligen Stichprobenmittelwert (SSR); beschreibt die Unterschiede zwischen den Merkmalsausprägungen innerhalb einer Stichprobe."}`
+    - Varianzen zwischen den Gruppen berechnen`r if(lec){": Streuung der Gruppemittelwerte um den Gesamtmittelwert (SSM); spiegelt die Unterschiede wider, die aufgrund der Zugehörigkeit zu den verschiedenen Gruppen (z.B. durch verschiedenen Unterrichtsformen in den Schulklassen) entstanden sind."}`
+    - Vergleich dieser Varianzen (**F-Test**)`r if(lec){": Je höher der F-Wert (je größer SSM im Verhältnis zu SSR), desto eher gibt es einen Unterschied."}`
+
+## Post-Hoc Tests
+- F-Wert gibt nur an, ob es einen Unterschied gibt oder nicht
+- Man weiß nicht, wo (zwischen welchen Gruppen) es einen Unterschied gibt
+- Logik von Post-Hoc Tests
+    - t-Tests`r if(lec){": zwischen allen Gruppen werden t-Tests durchgeführt"}`
+    - Korrektur um **$\alpha$-Inflation**`r if(lec){": bei mehrfachem Testen in derselben Grundgesamtheit steigt die Wahrscheinlichkeit einen Fehler 1. Art zu begehen mit der Anzahl der Testdurchführungen"}`
+
+## Voraussetzungen ANOVA
+- Intervallskalierte Daten
+- Normalverteilung der abhängigen Variablen`r if(lec){": Wenn nicht gegeben auf Kruskal Wallis Test ausweichen"}`
+- Homogenität der Varianzen`r if(lec){": Wenn nicht gegeben auf Brown-Forsythe's F oder Welch's F ausweichen"}`
+
+## Beispiel - ANOVA (ttest1.csv)
+```{r anovaEx1}
+df <- read.csv2(file = "Data/ttest1.csv")
+df$Gruppe <- as.factor(df$Gruppe)
+anova <- aov(formula = Wert ~ Gruppe, data = df)
+anova.posthoc <- TukeyHSD(x=anova, 'Gruppe', conf.level=0.95)
+```
+
+Gibt es Unterschiede?
+```{r}
+summary(anova)
+
+par(mfrow = c(1, 3))
+boxplot(df$Wert[df$Gruppe == 0], ylim = c(-5, 5))
+boxplot(df$Wert[df$Gruppe == 1], ylim = c(-5, 5))
+boxplot(df$Wert[df$Gruppe == 2], ylim = c(-5, 5))
+
+# plot(x = c(
+#   mean(df$Wert[df$Gruppe == 0]), 
+#   mean(df$Wert[df$Gruppe == 1]),
+#   mean(df$Wert[df$Gruppe == 2])
+# ))
+```
+
+`r if(!lec){"-------"}` 
+
+**Wo** gibt es Unterschiede?
+```{r}
+anova.posthoc
+```
+
+
+## [!!!] Exkurs: ANOVA mit der Hand
+
+Beispieldaten: http://www.mathandstatistics.com/learn-stats/hypothesis-testing/one-way-anova-by-hand
+
+```{r anovaExkurs}
+n1 <- 70
+n2 <- 70
+n3 <- 70
+n <- list(n1, n2, n3)
+
+M1 <- 4.0
+M2 <- 3.7
+M3 <- 3.4
+
+s1 <- 4.4
+s2 <- 5.2
+s3 <- 6.1
+
+N <- n1 + n2 + n3
+df_bw <- length(n)-1
+df_wi <- sum(n1-1, n2-1, n3-1)
+
+#?qf(): Density, distribution function, quantile function and random generation for the F distribution with df1 and df2 degrees of freedom (and optional non-centrality parameter ncp).
+cutoff <- qf(df1 = df_bw, df2 = df_wi, p = 0.95)
+
+Mg <- (M1+M2+M3)/3
+s_g <- ((M1-Mg)^2+(M2-Mg)^2+(M3-Mg)^2)/df_bw
+
+var_bw <- s_g * (n1+n2+n3)/3
+
+var_wi <- (s1+s2+s3)/3
+
+F <- var_bw/var_wi
+
+if(F>cutoff){print("Reject HO")}else{print("Accept H0")}
+```
+
+`r if(lec){"## Student Voice
+Ähnlich wie beim t-Test bei unabhängigen Stichproben lässt sich mit der ANOVA eine Hypothese überprüfen, derzufolge eine Variable in unterschiedlichen Teilgruppen der Grundgesamtheit einen gleich hohen Mittelwert aufweist. Ein wesentlicher Unterschied zum t-Test ist zunächst einmal, dass sich mit der ANOVA mehrere Mittelwerte (mehrere Teilgruppen der Grundgesamtheit) miteinander vergleichen lassen, während der t-Test nur den Vergleich zweier Mittelwerte ermöglicht. Die mit der ANOVA getestete Nullhypothese unterstellt, alle miteinander verglichenen Gruppenmittelwerte der betrachteten Variablen seien in der Grundgesamtheit identisch. Außerdem werden auch multiple Vergleichtests durchgeführt, mit denen identifiziert werden kann, zwischen welchen beobachteten Gruppen signifikante Mittelwertunterschiede bestehen.
+
+Wenn das Ergebnis signifikant (p< 0,05) ist, bedeutet dies, dass es Unterschiede gibt. Die Frage ist nur: zwischen welchen Gruppen?
+
+Ein Post-hoc-Test (z.B. Scheffe-Test in SPSS) gibt Auskunft darüber, wo genau Differenzen zu finden sind."
+}` 
+
+## Übung
+Führe eine Varianzanalyse basierend auf dem Datensatz "anova1.csv" aus. "grp" ist der Faktor, "y" die abhängige Variable. Teste auch alle Voraussetzungen.
+
+```{r}
+rm(df)
+require(truncnorm)
+seed <- 15
+
+set.seed(seed)
+N <- runif(1, min=70, max=1100)
+
+set.seed(seed)
+x <- round(rtruncnorm(n= N, a=0, b=7, mean=5, sd=1.6), 0)
+set.seed(seed)
+grp <- sample(x = 0:4, size = N, replace = TRUE)
+y.raw <- 1 + 0.1*x + (0.4 + 0.15*rnorm(N))*grp + 0.4*rnorm(N)
+y <- round(y.raw, 2)
+
+df <- data.frame(grp, y)
+df$grp <- as.factor(df$grp)
+write.csv2(x = df, file = "Data/anova1.csv")
+```
+
+### Lösung
+```{r}
+
+anova <- aov(formula = y ~ grp, data = df)
+summary(anova)
+par(mfrow = c(1, 5))
+min <- 0
+max <- 5
+boxplot(df$y[df$grp == 0], ylim = c(min, max))
+boxplot(df$y[df$grp == 1], ylim = c(min, max))
+boxplot(df$y[df$grp == 2], ylim = c(min, max))
+boxplot(df$y[df$grp == 3], ylim = c(min, max))
+boxplot(df$y[df$grp == 4], ylim = c(min, max))
+TukeyHSD(anova, 'grp', conf.level=0.95)
+```
+
+## Weitere Übungen & Fragen
+
+`r LINK("https://youtu.be/gK658WWtkjY")`
+
+
+`r LINK("https://youtu.be/kdCCt56kFaA")`
+

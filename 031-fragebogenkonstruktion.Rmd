@@ -1,0 +1,137 @@
+# Fragebogenkonstruktion 
+
+`r LINK("https://youtu.be/A8olV9C-02Q")`
+
+## Vorbereitung
+- Ps: 5, 9
+- K13: 10
+- Hinkin, T. R. (1995). A review of scale development practices in the study of organizations. Journal of Management, 21(5), 967-988. doi:10.1016/0149-2063(95)90050-0
+- Videos: https://www.khanacademy.org/math/statistics-probability/designing-studies/sampling-and-surveys/v/reasonable-samples
+
+## Fragebogen
+- standardisierte Zusammenstellung von Items (~Fragen)`r if(lec){" (es sind aber nicht-standardisierte Abläufe / Reihenfolgen Denkbar, z.B. bei Online Fragebögen oder bei Telefonumfragen, die mit entsprechenden Logiken hinterlegt sind.)"}`
+- Analogie: Prüfungen`r if(lec){": eine schriftliche Prüfung ist sehr vergleichbar mit einem Fragebogen -- Man will durch ein standardisiertes Verfahren etwas über ein latentes Konstrukt erfahren (z.B. Statistik-Wissen/Kompetenz). Versuche diese Analogie auch an anderen Stellen dieses Skriptums anzuwenden."}`
+
+### Stärken
+- Quantifizierbare Ergebnisse
+- Repräsentative Ergebnisse
+- Vergleichbare Ergebnisse
+
+### Schwächen
+- Erfasst nur das, was vorher festgelegt wurde
+- Kaum individuelles Eingehen auf Befragte möglich
+- Kaum Möglichkeit zu Nachfragen
+
+## Fragebogen wird beeinflusst von
+- Forschungsfrage und Hypothesen
+- Befragungsart`r if(lec){" (z.B.: schriftlich, online"}`
+- Verfahren der Stichprobenziehung
+- Prozess der Fragebogenentwicklung `r if(lec){" (z.B.: Teams vs. Einzelpersonen, bestehendes Material)"}`
+- Pre-Tests `r if(lec){" (z.B.: Feldtests, kognitive Interviews)"}`
+- Eigenschaften der Stichprobe`r if(lec){" (z.B.: Lesekompetenz)"}`
+- Erhebungssituation`r if(lec){" (z.B.: Verfügbare Zeit)"}`
+
+## Befragungsarten
+
+Art | schriftl. | face2f. | tel. | online |
+--------|:-------:|:-------:|:-------:|:-------:
+Interviewer-Effekte | |- |- | | |
+Kosten/Zeit | |- |- |+ | |
+Anonymität| |- |- |+ |
+Nachfragen | |+ |+ | |
+Dateninput | | |+ |+ |
+Erreichbarkeit | ? |? | ? | ? |
+
+## Items
+Items setzen sich zusammen aus...
+
+- Itemstamm (prompt, Frage)
+    - Fragen
+    - Bild
+    - Aufgabe
+    - ...
+- Antwortformat (response scale)
+    - frei
+    - gebunden (z.B. Likert-Skala / Guttman-Skala)
+
+> **Frage:** Suche nach einen Fragebogen (wissenschaftlich oder nicht) und identifiziere unterschiedliche Itemstämme bzw. Antwortformate.
+
+## Arten von Fragen
+- Unterteilung nach Inhalten`r if(lec){": Fragen nach Wissen und Verhalten, Fragen nach Wertorientierungen, Einstellungen oder Meinungen, Fragen nach Merkmalen der Person"}`
+- Unterteilung nach Form`r if(lec){": Offene Fragen, Halboffene Fragen, Geschlossene Fragen"}`
+
+> **Frage:** Gib Beispiele für offene bzw. geschlossene Fragen.
+
+## Offene vs. geschlossene Fragen
+### Geschlossene Fragen
++ standardisiert
++ schneller in Befragung und Auswertung
+- Befragte finden sich eventuell nicht in der Kategorie wieder
+
+> **Frage:** Wann würdest du geschlossene Fragen stellen?
+`r if(lec){"Das Spektrum der Antworten ist bekannt / nicht zu groß; Der Sachverhalt der Frage ist bekannt"}`
+
+### Offene Fragen
++ Befragte können frei und ihren Gewohnheiten entsprechend antworten
+- Abhängigkeit von Verbalisierungsfähigkeit
+- Aufwendig in Befragung und Auswertung
+
+> **Frage:** Wann würdest du offene Fragen stellen?
+`r if(lec){"Die Frage behandelt ein neues Thema; die Begrifflichkeiten der Befragten sind von Interesse; die Motivation der Befragten soll gestärkt werden"}`
+
+## Kriterien für gute Fragen
+- Eindeutigkeit
+- Präzision`r if(lec){": kurze Fragen sind besser"}`
+- Verständlichkeit
+
+## Quellen für Fragen
+- eigene Überlegungen
+    - ggf. basierend auf wissenschaftliche Modelle und Theorien
+- bestehende Skalen zu ähnlichen Themen
+    - die "großen" Fragebögen: ESS, ISSP, ALLBUS.
+    - aus der wissenschaftlichen Literatur
+    
+`r if(lec){"Hinweis: Die wissenschaftliche Praxis besteht v.a aus der Wiederverwendung bereits bestehender Skalen! Neue Skalen zu entwickeln ist teuer (es ist immer ein Verfahren zur sogenannten Validierung notwendig, sonst weiß man nicht, ob die Fragen wirklich das messen, was sie messen sollen; vgl. Gütekriterien der Forschung). Außerdem funktioniert die Wissenschaft vor allem du Kumulierung von Erkenntnissen -- ein Einzelergebnis sagt oft wenig aus. Vergleichbarkeit (z.B. durch Verwendung der selben Fragen) ist deshalb sehr wichtig."}` 
+    
+## Antwortskalen
+- verbalisiert vs. entpunktbenannt
+- gerade vs. ungerade
+- eng vs. breit`r if(lec){": Zu breite Skalen führen zu Überforderung und zu Scheinpräzision; zu enge Skalen ermöglichen kaum Differenzierung"}`
+- links nach rechts vs. rechts nach links`r if(lec){": Optisch präsentierte Skalen dem Lesefluss entsprechend von links nach rechts (1=gar nicht wichtig); akustisch präsentierte Skalen entsprechend der Frageformulierung von rechts nach links (1=sehr wichtig)"}`
+- Auch abhängig von Prompt: Frage vs. Aussage/Behauptung`r if(lec){": Für Positionen, Meinungen, Einstellungen sind Behauptungen besser geeignet. sind direkter, und veranlassen auch unsichere Personen zu einer eindeutigeren Stellungnahme; Achtung auf ausbalancierte Wertungen (Antworttendenzen); Achtung auf mehr und weniger zugespitzte Formulierungen (Varianz)"}`
+- **Likert** vs. Guttman vs. Thurstone
+
+## Aufbau Fragebogen
+- Einleitungstext`r if(lec){"
+    - Vorstellung von Person und Einrichtung
+    - Kurze Darstellung der Fragestellung
+    - Betonung, dass uns Meinung der Person wichtig ist
+    - Bitte um ehrliche Antwort und Hinweis, dass es keine richtigen und falschen Antworten gibt
+    - Zusicherung der Anonymität
+    - Dank für die Zeit"}`
+- Frageblock
+    - logischer Aufbau`r if(lec){": Themenschwerpunkte; vom Allgemeinen zum Besonderen"}`
+    - abwechslungsreich`r if(lec){": leicht/schwer, offen/geschlossen, etc"}`
+    - Position soziodemografische Fragen?
+- Schlussworte
+
+## Häufige Probleme
+- Fragen nach Kausalitätsbeziehungen und komplexen Lösungen`r if(lec){": Sind Sie obdachlos aufgrund der hohen Wohnungskosten?"}`
+- Mehrdimensionale Fragen`r if(lec){": Möchten Sie reich und berühmt sein?"}`
+- Keine Referenzangaben (z.B. Zeitangabe)`r if(lec){": How often do you feel tired? always, usually, sometimes, rarely, or never"}`
+
+## Übungen
+Was ist an folgenden Fragen gut/schlecht:
+
+- Finden Sie, dass hohe Studiengebühren ein geeignetes Mittel gegen 
+überfüllte Hörsäle sind?
+- Befürworten Sie die Abschaffung der Anonymität von Reispässen?
+- Leiden Sie darunter, dass Eltern Ziffernnoten einfordern? 
+- Glauben Sie auch, dass der Euro an den Preissteigerungen dieses Jahres Schuld ist? 
+- Glauben Sie, dass der hohe Ausländeranteil in der Pflichtschule die Lehrer 
+überfordert?
+
+## Weiterführend
+
+`r LINK("https://youtu.be/BPoiA-2zjAc")`
+   

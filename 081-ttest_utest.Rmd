@@ -1,0 +1,259 @@
+# t-Test (und U-Test)
+
+## Vorbereitung
+- OS3: 5.1-5.3
+- IS: 10
+- K13: 7
+
+## Problemstellung
+
+Wir möchten herausfinden, ob es einen Unterschied bei der Einschätzung der *Lernkultur* basierend auf dem *Geschlecht* der StudienteilnehmerInnen gibt.
+
+## Anknüpfungspunkte
+- Unterschiedshypothese
+- Hypothesentest
+
+## Allgemeines
+- Ziel`r if(lec){": Vergleich von zwei Stichprobenmittelwerten"}`
+- Arten
+    - unabhängige Stichproben`r if(lec){": Keine Beobachtung bzw. Messung wird von einer anderen beeinflusst. Beispiel: eine Gruppe StudentInnen wird zufällig in zwei gleichgroße Gruppen geteilt. Gruppe 1 nimmt an einem Lerntutorium teil, Gruppe 2 nicht. Die zwei Gruppen sind unabhängig voneinander."}`
+    - abhängige Stichproben`r if(lec){": die Messungen werden voneinander beeinflusst. Beispiel: eine Gruppe von StudentInnen nimmt an einem Lerntutorium teil. Ein Forscher vergleicht sodann die Lernkompetenz der StudentInnen vor und nach dem Lerntutorium."}`
+- Hypothesentest`r if(lec){"
+    - H0: es existiert kein Unterschied zwischen zwei Gruppen.
+    - H1: es existiert ein Unterschied zwischen zwei Gruppen."}`
+- Logik des t-Tests
+    - Gruppenmittelwerte berechnen
+    - Differenz der Gruppenmittelwerte berechnen
+    - Signifikanz der Differenz berechnen
+
+## Voraussetzungen t-Test
+- Randomisierung`r if(lec){" = Zufallsstichprobe"}` 
+- mindestens intervallskalierte Daten`r if(lec){". Bei ordinalskalierten Daten kannst du auf den Mann-Whitney-U-Test (unabhängige Stichproben) bzw. den Wilcoxon-Vorzeichen-Rang-Test (gepaarte Stichproben) ausweichen."}`
+- Normalverteilung`r if(lec){" der Variablen. Test: Kolmogorov-Smirnov-Test (sollte nicht signifikant sein!). Bei nicht normalverteilten Daten kannst du auf den Mann-Whitney-U-Test (unabhängige Stichproben) bzw. den Wilcoxon-Vorzeichen-Rang-Test (gepaarte Stichproben) ausweichen."}`
+- Varianzhomogenität`r if(lec){": gleiche Varianzen der Gruppen. Test: Levene-Test (Ergibt sich hier ein signifikanter F-Wert, dann darf nicht von Varianzhomogenität ausgegangen werden)"}`
+    
+## Beispiel
+Datei: ttest1.csv (Simulierte Daten)
+
+- Variablen
+    - Wert
+    - Gruppe (0, 1, 2)
+        - 0 bzw. 1 = zufällig Daten ("männlich / weiblich")
+        - 2 = manipulierte Daten
+        
+```{r}
+set.seed(3)
+x <- rnorm(n = 200, mean = 0, sd = 1)
+set.seed(3)
+sex <- sample(x = c(0, 1, 2), size = 200, replace = TRUE)
+df <- data.frame(x,sex)
+names(df) <- c("Wert", "Gruppe")
+
+df$Wert[df$Gruppe==2] <- df$Wert[df$Gruppe==2]+1
+
+write.csv2(x = df, file = "Data/ttest1.csv")
+```
+
+`r if(!lec){"-------"}`   
+
+## Umsetzung mit Software
+
+In SPSS:
+
+`r LINK("https://youtu.be/yCa3fryPOa4")`
+
+In PSPP:
+
+`r LINK("https://youtu.be/orqwKyuc1y0")`
+
+`r if(!lec){"-------"}`  
+
+### Beispiel - Visualisierung
+Diese drei **Boxplots** zeigen die Verteilungen von "Wert" in den drei Gruppen (0, 1, 2).
+
+```{r}
+par(mfrow=c(1,3))
+boxplot(df$Wert[df$Gruppe==0], ylim=c(-5,5))
+boxplot(df$Wert[df$Gruppe==1], ylim=c(-5,5))
+boxplot(df$Wert[df$Gruppe==2], ylim=c(-5,5))
+par(mfrow=c(1,1))
+```
+
+`r if(!lec){"-------"}`   
+
+### Beispiel - t-Test Gruppen 0/1
+Wir führen einen t-Test zwischen den Gruppen 0 und 1 durch.
+
+```{r}
+ttest <- t.test(x = df$Wert[df$Gruppe==0], y = df$Wert[df$Gruppe==1], paired = FALSE)
+ttest
+```
+
+`r if(!lec){"-------"}`   
+
+### Beispiel - t-Test Gruppen 0/1: Interpretation
+Beachte bei der Interpretation...
+
+- den Konfidenzintervall von `r {ttest$conf.int[1]}` bis `r {ttest$conf.int[2]}`
+- den p-Wert von `r {round(ttest$p.value, 2)}`
+
+> **Frage:** Was sagen diese Werte aus?
+
+`r if(!lec){"-------"}`   
+
+### Beispiel - t-Test Gruppen 0/2
+Wir führen einen t-Test zwischen den Gruppen 0 und 2 durch.
+
+```{r}
+ttest <- t.test(x = df$Wert[df$Gruppe==0], y = df$Wert[df$Gruppe==2], paired = FALSE)
+ttest
+```
+
+`r if(!lec){"-------"}`   
+
+### Beispiel - t-Test Gruppen 0/2: Interpretation
+Beachte bei der Interpretation...
+
+- den Konfidenzintervall von `r {ttest$conf.int[1]}` bis `r {ttest$conf.int[2]}`
+- den p-Wert von `r {round(ttest$p.value, 2)}`
+
+`r if(lec){"
+> **Achtung:** Der p-Wert ist natürlich nicht genau 0 (siehe Output des Tests)--aber durch Rundungen könnte es so aussehen. Bei eigenen Texten bzw. der Interpretation daher *< 0.001* verwenden."}`
+
+und, da es sich um ein **statistisch signifikantes Ergebnis** handelt
+
+- die Mittelwerte der Gruppen von `r {unname(ttest$estimate[1])}` bzw. `r {unname(ttest$estimate[2])}`.
+
+> **Frage:** Was sagen diese Werte aus?
+
+## Übung
+1. Lade die Daten Froehlich 2014 Daten 100.sav
+2. Führe den Kolmogorov-Smirnov (K-S) Test für die Variablen WC1 bis WC7 durch. Was wird hier getestet?
+3. Was bedeuten signifikante Ergebnisse im K-S Test?
+4. Wie lautet H0 des K-S Test?
+5. Wie viele der getesteten Variablen WC1 bis WC7 sind laut K-S Test wahrscheinlich normalverteilt?
+6. Führe den Kolmogorov-Smirnov (K-S) Test für eine neu generierte Index-Variable MWC durch, die durch den Mittelwert von WC1 bis WC7 gebildet wird. Liegt eine Normalverteilung laut K-S Test vor?
+
+`r if(!lec){"-------"}`   
+
+7. Angenommen die Index-Variable MWC ist normalverteilt: Wie kannst du dieses unterschiedliche Ergebnis im Vergleich zu WC1-WC7 erklären?
+8. Wir wollen die MWC-Werte zweier Banken vergleichen. Welchen Test wählst du?
+9. Teste den Unterschied zwischen Bank 2 und Bank 4. Liegt ein signifikanter Unterschied vor? Welche Bank hat den höheren Wert im Durchschnitt?
+10. Teste den Unterschied zwischen Bank 3 und Bank 4. Liegt ein signifikanter Unterschied vor? Welche Bank hat den höheren Wert im Durchschnitt?
+11. Versuche den Mann-Whitney-U-Test zwischen Bank 3 und Bank 4 durchzuführen. Welches Problem ergibt sich?
+12. Erstelle die Variable bank34, die den Wert 3 für alle Antworten aus DBAN = 3 und den Wert 4 für alle Antworten aus DBAN = 4 enthält (und ansonsten nur Leerzellen). Führe mit dieser Variable den Mann-Whitney-U-Test zwischen Bank 3 und Bank 4 basierend auf MWC durch.
+
+## Lösung
+1. -
+2. Es wird die Normalverteilung der Variablen getestet.
+3. Es liegt laut K-S Test keine Normalverteilung vor.
+4. Die Daten liegen in einer bestimmten Distribution (Normalverteilung) vor.
+5. 0
+6. Ja
+
+7. Indexvariablen sind durch die verschiedenen Messungen die zusammengefasst werden (WC1-WC7) eher normalverteilt als ihre Komponenten. Das haben wir in Einheit 1 und 2 diskutiert.
+8. T-Test bei unabhängigen Stichproben.
+9. Das Ergebnis ist nicht signifikant (p = .526); Bank 2 hat den höheren Mittelwert (2,9341).
+10. Das Ergebnis ist signifikant (p = .012); Bank 3 hat den höheren Mittelwert (3,6250).
+11. SPSS verlangt nach einer Variable mit nur 2 Dimensionen.
+12. -
+
+
+`r if(lec){"## Student Voice
+Der T-Test dient dem Vergleich zweier unabhängiger Stichproben bezüglich eines metrischen Merkmals. Die Vorrausetzung für den Test ist, dass die Daten mindestens intervallskaliert sind. Außerdem ist eine Normalverteilung der Daten wichtig. 
+Sollten die Daten nicht intervallskaliert und normalverteilt sein, wendet man bei unabhängigen Stichproben den Mann-Whitney-U - Test an und bei gepaarten Stichproben den Wilcoxon-Vorzeichen-Rang- Test. 
+Der T-Test setzt außerdem eine Varianzhomogenität voraus. Die Varianzen der beiden Gruppen sollen also gleich groß sein.
+
+Zunächst einmal testet der T - Test, ob die Mittelwerte der Grundgesamtheit verschieden sind. Anschließend wird die Differenz der Mittelwerte berechnet und ihre gemeinsame Varianz. Liegt die Varianz dann über 0,05 spricht man von einer Varianzgleichheit und lehnt die Nullhypothese nicht ab. Sprich man geht schon einmal von einer Varianzgleichheit aus.
+
+Nach der Berechnung der gemeinsamen Varianz wird der t - Wert berechnet. Da dieser in PSPP angezeigt nicht großartig interpretierbar ist, schaut man sich für die Interpretation den p - Wert an. Jeder t - Wert hat nämlich einen p - Wert, welchen man sich ohne PSPP anhand des T - Wertes nachschlagen müsste.
+
+Liegt der p - Wert über 0,05 wird davon ausgegangen, dass man die Nullhypothese annehmen kann. Man spricht dann also von keinem signifikanten Unterschied unter den getesteten Gruppen/ Stichproben.
+"}`
+
+<!-- *****CLOSING CHUNK************ -->
+## Übung
+Führe einen t-test zwischen den Gruppen 0 und 1 bei den Datensätzen ttest2.csv und ttest3.csv durch. 
+
+```{r}
+set.seed(10)
+x <- rnorm(n = 20, mean = 0, sd = 1)
+set.seed(10)
+sex <- sample(x = c(0, 1), size = 20, replace = TRUE)
+df2 <- data.frame(x,sex)
+names(df2) <- c("Wert", "Gruppe")
+df2$Wert[df2$Gruppe==1] <- df2$Wert[df2$Gruppe==1]
+
+write.csv2(x = df2, file = "Data/ttest2.csv")
+
+set.seed(10)
+x <- rnorm(n = 2000, mean = 0, sd = 1)
+set.seed(10)
+sex <- sample(x = c(0, 1), size = 2000, replace = TRUE)
+df3 <- data.frame(x,sex)
+names(df3) <- c("Wert", "Gruppe")
+df3$Wert[df3$Gruppe==1] <- df3$Wert[df3$Gruppe==1]+0.15
+
+write.csv2(x = df3, file = "Data/ttest3.csv")
+```
+
+## Lösung ttest2.csv
+
+### Levene Test
+```{r}
+library(car)
+
+leveneTest(y = df2$Wert, group = as.factor(df2$Gruppe))
+```
+
+### t-test
+```{r}
+print("Varianzhomogenität angenommen")
+ttest <- t.test(x = df2$Wert[df2$Gruppe==0], y = df2$Wert[df2$Gruppe==1], paired = FALSE, var.equal = TRUE)
+ttest
+
+print("Varianzhomogenität nicht angenommen (nach Welch)")
+ttest <- t.test(x = df2$Wert[df2$Gruppe==0], y = df2$Wert[df2$Gruppe==1], paired = FALSE, var.equal = FALSE)
+ttest
+```
+
+Beachte bei der Interpretation...
+
+- den Konfidenzintervall von `r {ttest$conf.int[1]}` bis `r {ttest$conf.int[2]}`
+- den p-Wert von `r {round(ttest$p.value, 2)}`
+- die Mittelwerte der Gruppen von `r {unname(ttest$estimate[1])}` bzw. `r {unname(ttest$estimate[2])}`
+- die Voraussetzungen für den t-Test
+
+## Lösung ttest3.csv
+
+### Levene Test
+```{r}
+#library(car)
+
+leveneTest(y = df3$Wert, group = as.factor(df3$Gruppe))
+```
+
+### t-test
+```{r}
+print("Varianzhomogenität angenommen")
+ttest <- t.test(x = df3$Wert[df3$Gruppe==0], y = df3$Wert[df3$Gruppe==1], paired = FALSE, var.equal = TRUE)
+ttest
+
+print("Varianzhomogenität nicht angenommen (nach Welch)")
+ttest <- t.test(x = df3$Wert[df3$Gruppe==0], y = df3$Wert[df3$Gruppe==1], paired = FALSE, var.equal = FALSE)
+ttest
+```
+
+Beachte bei der Interpretation...
+
+- den Konfidenzintervall von `r {ttest$conf.int[1]}` bis `r {ttest$conf.int[2]}`
+- den p-Wert von `r {round(ttest$p.value, 2)}`
+- die Mittelwerte der Gruppen von `r {unname(ttest$estimate[1])}` bzw. `r {unname(ttest$estimate[2])}`
+- die Voraussetzungen für den t-Test
+
+`r if(!lec){"
+-------
+
+Ende der Lektion.
+"}`
+<!-- ********************************** -->

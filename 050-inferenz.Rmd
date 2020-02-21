@@ -1,0 +1,289 @@
+# Inferenzstatistik (schließende Statistik)
+
+`r LINK("https://youtu.be/-63gq7Q1rBM")`
+
+## Anknüpfungspunkte
+- Signifikanztest
+- Lagemaße
+- Streuungsmaße
+- z-Transformation
+
+## Vorbereitung
+
+## Allgemeines
+- Ziel`r if(lec){": Schluss von den erhobenen Daten einer Stichprobe auf die Werte in der Population"}`
+
+### Schätzer
+- Punktschätzung`r if(lec){": Angabe eines Werts für einen unbekannten Parameter"}`
+    - Erwartungswert $E(X)$
+    - Probleme`r if(lec){": (fast) sicher falsch, keine Aussage über Genauigkeit"}`
+- Intervallschätzung`r if(lec){": Angabe eines Intervalls, das mit einer bestimmten Wahrscheinlichkeit den unbekannten Parameter überdeckt."}`
+    - Konfidenzintervall (confidence interval, CI)`r if(lec){": Der Wertebereich, in dem man den interessierenden Parameter 
+der Grundgesamtheit mit einer bestimmten Wahrscheinlichkeit erwartet, 
+bezeichnet man als Konfidenzintervall."}`
+- Hypothesentest`r if(lec){": Annahme bzw. Zurückweisung von Aussagen über den unbekannten Parameter bei einer vorgegeben Irrtumswahrscheinlichkeit"}`
+
+## Standardfehler (SE) des Mittelwerts
+- Genauigkeit der Schätzung`r if(lec){": Der Standardfehler des Mittelwerts gibt die Genauigkeit der Schätzung des Populationsmittelwerts an. Aufgrund einer Stichprobe können wir nicht nur den Mittelwert der Population schätzen, sondern auch die Genauigkeit dieser Schätzung bestimmen."}`
+- Streuung in einer Verteilung`r if(lec){": Der Standardfehler ist definiert als die Streuung in einer Verteilung von Mittelwerten aus gleich großen Zufallsstichproben einer Population."}`
+- Je kleiner der Standardfehler, desto präziser die Schätzung des Populationsparameters
+- Standardfehler wird größer...
+    - je größer die Streuung der Messwerte $\sigma$
+    - je kleiner die Stichprobe $n$
+
+$$ SE = \frac{\sigma}{\sqrt{n}} \approx \frac{s}{\sqrt{n}}$$
+
+## Konfidenzintervall (CI)
+- Der Konfidenzintervall ergibt sich aus
+    - der gesetzten Breite des Intervalls $z$ ($\alpha$-Level)`r if(lec){"
+            - Per Konvention: z = 1,96 (95%) oder 2,58 (99%), siehe z-Transformation"}`
+    - dem Stichprobenmittelwert $\bar{x}$
+    - dem geschätzen Standardfehler $SE_{\bar{x}}$
+$$ lower limit (LL) = \bar{x} - z * SE_{\bar{x}} $$
+$$ upper limit (UL) = \bar{x} + z * SE_{\bar{x}} $$
+
+- Interpretation: Misst man mehrmals und berechnet jeweils den 95% CI, enthalten 95% der Intervalle den Populations-Mittelwert.
+    - falsche Interpretation: "Mit einer Wahrscheinlichkeit von 95% liegt der Populations-Mittelwert innerhalb von dem CI"
+
+## Konfidenzintervall (CI) - Berechnungsbeispiel in R
+```{r, echo=TRUE}
+data <- c(1, 2, 10, 5, 20, 3)
+m <- mean(data)
+sd <- sd(data)
+n <- length(data)
+SE <- sd/sqrt(n)
+(LL <- m - 1.96*SE)
+(UL <- m + 1.96*SE)
+```
+
+Der 95% Konfidenzintervall um den Mittelwert `r {m}` reicht von `r {LL}` bis `r {UL}`.
+
+## Konfidenzintervall (CI) - Weite
+- Die Länge des Konfidenzintervalls (UL-LL) hängt ab von
+    - $\alpha$-Level / z`r if(lec){": Je größer das Alpha-Level, desto weiter das CI"}`
+    - $\sigma$`r if(lec){": Je größer die Standardabweichung, desto weiter das CI"}`
+    - n`r if(lec){": Je größer die Stichprobe, desto kürzer das CI"}`
+    
+$$ UL - LL = \bar{x} + \alpha*SE -(\bar{x} - \alpha*SE) = 2*\alpha*SE = \frac{2*\alpha*\sigma}{\sqrt{n}} $$
+
+- Interpretation: ein weites CI ist "ungenauer"!
+
+
+`r LINK("https://youtu.be/agjKK6_bSrA")`
+
+## Demonstration von Population, Stichprobenziehung, Standardfehler
+
+### Population
+
+```{r}
+N <- 100
+p.draw <- 0.1 # Probabiltiy of selecing for sample
+p.draw1 <- 0.6
+library(truncnorm)
+library(ggplot2)
+library(gridExtra)
+x <- rtruncnorm(n= N, a=0, b=7, mean=5, sd=1.6)
+y <- 1 + 2*x + 5*rnorm(N)
+
+pop <- data.frame(x, y)
+```
+
+
+Wir generieren eine Punktwolke, die für diese Demonstration unsere Grundgesamtheit darstellt. Es sind `r N` Datenpunkte mit 2 Variablen x und y. Die Regressionsgleichung der Population ist:
+
+$$ y = 1 + 2x + e $$
+
+`r if(!lec){"-------"}`
+
+Hier ist die Punktewolke dargestellt:
+
+```{r}
+ggplot() +
+  geom_point(data = pop, aes(x = x, y = y), color = "black")
+```
+
+`r if(!lec){"-------"}`
+
+### Stichprobe
+
+```{r}
+totalSamples <- 4
+sampNo <- 1
+df <- data.frame() #store the Bs
+listOfPlots <- vector(mode = "list", length = totalSamples) #initalize list of plosts
+
+```
+
+Wir ziehen nun `r totalSamples` Stichproben (ca. `r p.draw` der Population werden jeweils gesampelt) von dieser Grundgesamtheit (rote Punkte) und zeichnen die Regressionsgerade ein (rote Linie). Die Stichproben sind immer anders, und daraus ergibt sich auch ein andere Regressionslinie. Der Konfidenzintervall (grauer Bereich) verändert sich ebenfalls um die Regressionslinie herum -- je nachdem wie, die Stichprobe gestreut ist.
+
+`r if(!lec){"-------"}`
+
+```{r}
+while(sampNo<=totalSamples) {
+  
+  select <- sample(x = c(TRUE, FALSE),size = N, replace = T, prob = c(p.draw, 1-p.draw))
+  samp <- data.frame(x, y, select)
+  
+  df <- rbind(df,unname(lm(data = samp[select == T, ], y ~x)$coefficients[2]))
+  
+
+ 
+  if(totalSamples<10){  
+    listOfPlots[[sampNo]] <- ggplot() +
+      geom_point(data = pop, aes(x = x, y = y), color = "black") +
+      geom_point(data = samp[select == T, ], aes(x = x, y = y), color = "red", size = 2) +
+      #geom_smooth(data = pop, aes(x = x, y = y), method = "lm", se = FALSE, color = "black") +
+      geom_smooth(data = samp[select == T, ], aes(x = x, y = y), method = "lm", se = T, color = "red")
+    
+    
+      
+    }
+  
+
+  sampNo <- sampNo + 1
+}
+
+  names(df) <- "B"
+
+
+  if(totalSamples<17){  
+  n <- length(listOfPlots)
+  nCol <- floor(sqrt(n))
+  do.call("grid.arrange", c(listOfPlots, ncol=nCol))
+  }
+  
+```
+
+`r if(!lec){"-------"}`
+
+Im Histogramm werden die B-Werte aller Stichproben gesammelt.
+
+```{r}
+  hist(x = df$B)
+```
+
+
+`r if(!lec){"-------"}`
+
+### Größere Stichprobe
+
+Jetzt wiederholen wir den Versuch mit eine größeren Stichprobe (ca. `r p.draw1` der Population werden jeweils gesampelt).
+
+```{r}
+totalSamples <- 4
+sampNo <- 1
+df <- data.frame() #store the Bs
+listOfPlots <- vector(mode = "list", length = totalSamples) #initalize list of plosts
+
+```
+
+> **Frage:** Wie verändern sich die Standardfehler?
+
+```{r}
+while(sampNo<=totalSamples) {
+  
+  select <- sample(x = c(TRUE, FALSE),size = N, replace = T, prob = c(p.draw1, 1-p.draw1))
+  samp <- data.frame(x, y, select)
+  
+  df <- rbind(df,unname(lm(data = samp[select == T, ], y ~x)$coefficients[2]))
+  
+
+ 
+  if(totalSamples<10){  
+    
+    
+    listOfPlots[[sampNo]] <- ggplot() +
+      geom_point(data = pop, aes(x = x, y = y), color = "black") +
+      geom_point(data = samp[select == T, ], aes(x = x, y = y), color = "red", size = 2) +
+      #geom_smooth(data = pop, aes(x = x, y = y), method = "lm", se = FALSE, color = "black") +
+      geom_smooth(data = samp[select == T, ], aes(x = x, y = y), method = "lm", se = T, color = "red")
+    
+    
+      
+    }
+  
+
+  sampNo <- sampNo + 1
+}
+
+  names(df) <- "B"
+
+
+  if(totalSamples<17){  
+  n <- length(listOfPlots)
+  nCol <- floor(sqrt(n))
+  do.call("grid.arrange", c(listOfPlots, ncol=nCol))
+  }
+  
+
+```
+
+
+`r if(!lec){"-------"}`
+
+```{r}
+totalSamples <- 1000
+sampNo <- 1
+df <- data.frame() #store the Bs
+listOfPlots <- vector(mode = "list", length = totalSamples) #initalize list of plosts
+
+```
+
+
+```{r}
+while(sampNo<=totalSamples) {
+  
+  select <- sample(x = c(TRUE, FALSE),size = N, replace = T, prob = c(p.draw1, 1-p.draw1))
+  samp <- data.frame(x, y, select)
+  
+  df <- rbind(df,unname(lm(data = samp[select == T, ], y ~x)$coefficients[2]))
+  
+
+ 
+  if(totalSamples<10){  
+    listOfPlots[[sampNo]] <- ggplot() +
+      geom_point(data = pop, aes(x = x, y = y), color = "black") +
+      geom_point(data = samp[select == T, ], aes(x = x, y = y), color = "red", size = 2) +
+      #geom_smooth(data = pop, aes(x = x, y = y), method = "lm", se = FALSE, color = "black") +
+      geom_smooth(data = samp[select == T, ], aes(x = x, y = y), method = "lm", se = T, color = "red")
+    
+    
+      
+    }
+  
+
+  sampNo <- sampNo + 1
+}
+
+  names(df) <- "B"
+
+
+  if(totalSamples<17){  
+  n <- length(listOfPlots)
+  nCol <- floor(sqrt(n))
+  do.call("grid.arrange", c(listOfPlots, ncol=nCol))
+  }
+  
+  hist(x = df$B)
+```
+
+
+## Übung
+1. Lade die Daten Froehlich et al. 2014 Daten 100.sav
+2. Berechne eine neue Variable: MWC = der Mittelwert von WC1-WC7. Welchen Wert hat Fall 3?
+3. Welches Messniveau hat MWC?
+4. Berechne den Standardfehler mit der Hand und kontrolliere den Wert in SPSS.
+5. Erstelle ein Diagramm, das MWC in Balken (inkl. 99% Konfidenzintervall) für die einzelnen Banken (DBAN) zeigt. Welche Bank hat den höchsten MWC Wert (ohne Fehler)?
+
+## Lösung
+1. -
+2. Transformieren, Variable Berechnen, MEAN(WC1, WC2,.). 3,85714285714286
+3. Metrisch.
+4. SPSS: via Häufigkeiten, Mit der Hand: Standardabweichung / Wurzel(n). SE = ,05948
+5. Bank 3
+
+`r if(!lec){"
+-------
+
+Ende der Lektion.
+"}`

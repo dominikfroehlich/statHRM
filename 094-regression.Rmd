@@ -1,0 +1,117 @@
+# Lineare Regression (OLS)
+## Problemstellung
+
+`r LINK("https://youtu.be/vQ-DSHgMoyA")`
+
+
+## Anknüpfungspunkte
+- Korrelation
+- Varianzanalyse (ANOVA)
+
+## Allgemeines
+- verschiedene Fragestellungen möglich
+    - Ursachenanalyse`r if(lec){": Wie stark ist der Einfluss der unabhängigen Variable auf die abhängige Variable?"}`
+    - Wirkungsprognosen`r if(lec){": Wie verändert sich die abhängige Variable bei einer Änderung der unabhängigen Variablen?"}`
+    - Zeitreihenanalysen`r if(lec){": Wie verändert sich die abhängige Variable im Zeitablauf und somit ceteris paribus auch in der Zukunft"}`
+- Logik der linearen Regression
+    - die beobachteten Werte sollen auf eine gerade verdichtet werden
+    - die Differenzen zwischen der Gerade und den beobachteten Werten soll minimiert werden`r if(lec){": Summe der Quadrate der Fehler (e) wird minimiert"}`
+- bivariat und multivariat möglich
+
+> **Frage:** Wieso werden die **Quadrate** der Fehler (e) minimiert?
+
+`r if(!lec){"-------"}` 
+
+$$ y = b_{0} + b_{1}*x_{1} + e $$
+
+$$ y = b_{0} + b_{1}*x_{1} + b_{2}*x_{2} + b_{n}*x_{n} + e $$
+
+Interpretation:
+
+- $y$: Vorhersagewert
+- $b_{0}$: Konstante, Interzept, Schnittpukt der Geraden wenn Prädiktor(en) = 0
+- $b_{1}$-$b_{n}$: Richtung und Stärke des Effekts des Prädiktors 1 bis n`r if(lec){": b ist so zu interpretieren, dass sich die Vorhersagewerte des Regressionsmodells für y genau um b Einheiten erhöhen, wenn sich die unabhängige Variable x um eine Einheit erhöht."}`
+- $x_{1}$-$x_{n}$: Werte der Prädiktoren
+- $e$: Fehler/Residuen (error); nicht erklärte Varianz
+
+## Güte der Regressionsfunktion
+- F-Wert
+    - Als Maß dafür, wie eng die Regressionsgerade an den Punkten der Punktewolke liegt - oder wie gut das Modell an die Daten angepasst ist - wird das Verhältnis zwischen dem erklärten Teil der Streuung und der gesamten Streuung betrachtet (siehe ANOVA).
+    - H0`r if(lec){": alle Regressionskoeffizienten des Modells in der Grundgesamtheit = 0"}`
+- $R^2$`r if(lec){": Das Verhältnis zwischen der Quadratsumme der erklärten Streuung und der Quadratsumme der Gesamtstreuung. Interpretation: Wenn X bekannt ist, kann die Vorhersage von Y um R-Quadrat % - gegenüber einer Vorhersage, die nur auf dem Mittelwert der Zufriedenheit basiert - verbessert werden. Das korrigierte R-Quadrat ist zu verwenden , wenn das Regressionsmodell mehr als eine unabhängige Variable hat."}`
+
+## Standardisierung
+- b-Werte nicht gut vergleichbar`r if(lec){": Die b-Werte hängen von der Skala ab, mit denen die involvierten Variablen gemessen wurden. Daher können sie untereinander nicht so leicht verglichen werden."}`
+- Standardisierte Werte ($\beta$)
+    - Vergleichbarkeit gegeben
+    - Konstante ist inhaltsleer
+
+$$ y = \beta_{0} + \beta_{1}*x_{1} + e $$
+
+$$ y = \beta_{0} + \beta_{1}*x_{1} + \beta_{2}*x_{2} + \beta_{n}*x_{n} + e $$
+
+`r if(!lec){"-------"}` 
+
+### Stärke der Effekte (nach Cohen)
+
+- 0.1 schwacher Effekt
+- 0.3 mittlerer Effekt
+- 0.5 starker Effekt
+
+## Voraussetzungen
+- intervallskalierte Daten (bzw. Dummy Variablen)
+- Zufallsstichprobe
+`r if(lec){"    - Diagnose: Wissen über Datensatz erforderlich."}`
+- linearer Zusammenhang zwischen UV und AV
+`r if(lec){"    - Diagnose: Lineare Zusammenhänge in den partiellen Regressionsdiagrammen sichtbar?"}`
+`r if(lec){"    - Lösung: Modell ändern, Transformieren"}`
+- Normalverteilung der Residuen (=Fehler)
+`r if(lec){"    - Diagnose: Histogramm der standardisierten Residuen beachten."}`
+- Varianzengleichheit der Residuen (Homoskedastizität)
+`r if(lec){"    - Diagnose: Streudiagramm ZRESID/ZPRED. Statistische Tests in SPSS/PSPP nicht verfügbar."}`
+- Unabhängigkeit der Residuen
+`r if(lec){"    - Diagnose: Durbin-Watson Statistik beachten. Gut = 2"}`
+- keine Multikollinearität
+`r if(lec){"    - Diagnose: VIF (unter 5) und Toleranz-Werte (über 0.10) beachten."}`
+`r if(lec){"    - Lösung: Eine Variable weglassen."}`
+- lineare Regressionskoeffizienten`r if(lec){": in SPSS/PSPP ist das gar nicht anders möglich."}`
+
+
+## Dummy-Kodierung
+- Nominale Merkmale können in die Regression aufgenommen werden, dazu müssen sie aber umkodiert werden
+- Dummy-Kodierung: 1. Merkmal vorhanden, 0. Merkmal nicht vorhanden
+
+
+
+## Beispiel (regression1.csv)
+```{r, include=FALSE}
+N <- 200
+set.seed(3)
+x1 <- rnorm(n = N, mean = 0, sd = 1)
+set.seed(4)
+x2 <- rnorm(n = N, mean = 0, sd = 1)
+set.seed(3)
+sex <- sample(x = c(0, 1), size = N, replace = TRUE)
+y <- 1 + sex*0.01 + x1*0.24 + x2*0.02 + rnorm(N)
+df <- data.frame(x1, x2,sex, y)
+write.csv2(x = df, file = "Data//regression1.csv")
+```
+
+```{r}
+lm1 <- lm(formula = scale(y) ~ scale(x1) + scale(x2) + sex)
+summary(lm1)
+```
+
+Interpretation: Insgesamt erklären die unabhängigen Variablen x1, x2 und sex (dummy) `r summary(lm1)$adj.r.squared*100`% der Varianz in der abhängigen Variable y. Die standardisierten Regressionskoeffizienten sind $\beta_{x1}$ = `r unname(lm1$coefficients[2])` (p = `r summary(lm1)$coefficients[2, 4]`), $\beta_{x2}$ = `r unname(lm1$coefficients[3])` (p = `r summary(lm1)$coefficients[3, 4]`) und $\beta_{sex}$ = `r unname(lm1$coefficients[4])` (p = `r summary(lm1)$coefficients[4, 4]`).
+
+## Weiterführende Analysemöglichkeiten
+
+`r LINK("https://youtu.be/0NISYZiUvn4")`
+
+
+`r if(!lec){"
+-------
+
+Ende der Lektion.
+"}`
+<!-- ********************************** -->

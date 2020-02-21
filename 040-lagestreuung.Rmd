@@ -1,0 +1,379 @@
+# Lage und Streuung
+
+`r LINK("https://youtu.be/H4atBN72BgQ")`
+
+## Anknüpfungspunkte
+- Variablen
+- Skalenniveaus
+
+
+## Beispieldaten
+Hier sind die Beispieldaten, die für die Kapitel Lagemaße und Streumaße für händische Berechnungen verwendet werden.
+```{r data, echo=FALSE}
+data <- c(1, 20, 5, 5, 5, 7, 9, 10, 12)
+data
+hist(data)
+```
+
+## Lagemaße (Maße der zentralen Tendenz)
+### Modus (Modalwert)
+`r if(lec){"Der Modus ist jener Wert, der in einer diskreten Verteilung am häufigsten vorkommt.
+
+- Vorteil: Ausreißer-resistent.
+- In einer grafischen Darstellung zeigt sich der Modalwert als Maximum. Die Berechnung des Modalwerts erfordert **Nominalskalenqualität** der Variablen. Graphen mit einem Modus und ohne weitere relative Hochpunkte heißen unimodal, eingipfelig; Gibt es in einer Verteilung zwei voneinander getrennte gleich hohe Maximalwerte -> bimodale Verteilung
+"}`
+
+> **Frage:** Berechne den Modus der Beispieldaten.
+
+```{r, echo=TRUE}
+table(data)
+
+as.numeric(names(sort(-table(data)))[1])
+```
+
+`r if(!lec){"-------"}`
+
+### Median
+`r if(lec){"Der Median ist jener Wert der eine Verteilung in zwei Hälften teilt. Der Median teilt eine Verteilung in zwei Hälften (es liegen genauso viele Messwerte über sowie unter diesem Wert) Der Median setzt mindestens **ordinalskalierte** Daten voraus Vorteil: Ausreißer-unempfindlich! Händische Berechnung: Daten sortieren, dann die Mitte suchen (bei gerader Anzahl an Werten: arithmetisches Mittel der beiden mittleren Zahlen."}`
+
+> **Frage:** Berechne den Median der Beispieldaten.
+
+```{r, echo=TRUE}
+sort(data)
+
+median(data)
+```
+
+`r if(!lec){"-------"}`
+
+### Arithmetisches Mittel ($\mu$, $\bar{x}$, Mittelwert)
+`r if(lec){"Das arithmetische Mittel gibt den Durchschnitt aller Messergebnisse wieder. Das gebräuchlichste Maß der zentralen Tendenz. Gibt den Durchschnitt aller Messergebnisse wieder. Ist die Summe aller Werte dividiert durch deren Anzahl n. Die Berechnung des arithmetischen Mittels ist nur bei mind. **intervallskalierten** Daten möglich. Achtung: empfindlich gegenüber Ausreißern."}`
+
+$$ \bar{x} = \frac{1}{n}*\sum_{i=1}^{n}(x) $$
+
+> **Frage:** Berechne das arithmetische Mittel der Beispieldaten.
+
+
+```{r, echo=TRUE}
+mean(data)
+```
+
+`r if(!lec){"-------"}`
+
+## Schiefe und Kurtosis
+
+### Schiefe (skew, v)
+Beschreibt die Asymmetrie einer Verteilung.
+
+Der Datensatz "lm_rechts.csv" ist rechtsschief.
+
+```{r}
+set.seed(1)
+rechts <- rbeta(10000,2,5)
+hist(rechts)
+write.csv2(x = rechts, file = "Data//lm_rechts.csv")
+```
+
+`r if(!lec){"-------"}`
+
+```{r, echo=TRUE}
+median(rechts)
+mean(rechts)
+
+```
+
+
+`r if(!lec){"-------"}`
+
+Der Datensatz "lm_links.csv" ist linksschief.
+
+```{r}
+set.seed(1)
+links <- rbeta(10000,5,2)
+hist(links)
+write.csv2(x = links, file = "Data//lm_links.csv")
+```
+
+`r if(!lec){"-------"}`
+
+```{r, echo=TRUE}
+median(links)
+mean(links)
+
+```
+
+> **Frage:** Wie kann man dieses Histogramm in SPSS darstellen?
+
+`r if(lec){"Antwort TBA"}`
+
+`r if(!lec){"-------"}`
+
+### Kurtosis (Wölbung)
+Kurtosis beschreibt die Steilheit einer Verteilung.
+
+Der Datensatz "lm_steil.csv" ist steilgipfelig.
+
+```{r}
+set.seed(1)
+a <- rnorm(1000, 0, 0.5)
+b <- rnorm(1000, -2, 2 )
+c <- rnorm(1000,  2, 2 )
+steil <- c( a, b, c )
+hist(steil)
+write.csv2(x = steil, file = "Data//lm_steil.csv")
+```
+
+`r if(!lec){"-------"}`
+
+Der Datensatz "lm_flach.csv" ist flachgipfelig.
+
+```{r}
+set.seed(1)
+a <- rnorm(1000, 0, 1)
+b <- rnorm(1000, -2, 1)
+c <- rnorm(1000,  2, 1)
+flach <- c( a, b, c )
+hist(flach)
+write.csv2(x = flach, file = "Data//lm_flach.csv")
+```
+
+## Quantile, Quartile, Dezile, Perzentile
+- Quantil`r if(lec){": der Wert, der eine Verteilung in bestimmte Segmente aufteilt."}`  
+    - **Quartile**`r if(lec){": teilen einen geordneten Datensatz in vier gleiche Teile"}`
+    - Dezile`r if(lec){": teilen einen geordneten Datensatz in 10 gleiche Teile"}`
+    - Perzentile`r if(lec){": teilen einen geordneten Datensatz in 100 gleich große Teile"}`
+
+Quartile bei den Beispieldaten:
+```{r}
+quantile(data)
+```
+
+Das 34. Quantil (=34% Perzentil, Zahl willkürlich gewählt) bei den Beispieldaten:
+```{r}
+quantile(data, probs = 0.34)
+```
+
+**Achtung:** Es gibt keine einheitliche Berechnungsweise für die Quartile!
+
+## Streuungsmaße
+Streuungsmaße beschreiben, wie stark die einzelnen Werte in einer Verteilung vom Mittelwert abweichen
+
+`r if(!lec){"-------"}`
+
+### Spannweite (Range)
+`r if(lec){"Die Spannweite gibt die Größe des Bereichs an, in dem die Messwerte liegen. Sie berechnet sich über die Differenz aus dem größten und dem kleinsten Wert. Die Variationsbreite sagt zwar einiges über die Verteilung aus, aber wie genau die Messwerte variieren, ist aus ihr alleine nicht ersichtlich."}`
+
+$$ range = max(x) - min(x) $$
+
+> **Frage:** Berechne die Spannweite der Beispieldaten.
+
+```{r, echo=TRUE}
+max(data)-min(data)
+```
+
+`r if(!lec){"-------"}`
+
+### (Inter-)Quartilsabstand (IQR)
+`r if(lec){"Der Quartilabstand IQR ist definiert als die Differenz zwischen dem 1. Quartil und dem 3. Quartil. Damit enthält er die zentralen 50% einer Verteilung. Aussagen über Streuung können getroffen werden; im Vergleich zur Spannweite gegenüber Ausreißern stabiler."}`
+
+$$ IQR = Q_{0.75}(x)-Q_{0.25}(x) $$
+
+> **Frage:** Berechne den IQR der Beispieldaten.
+    
+```{r, echo=TRUE}
+print(quantile(data))
+x <- quantile(data)[4] - quantile(data)[2] 
+print(unname(x))
+```    
+
+`r if(!lec){"-------"}`
+    
+### Varianz ($\sigma^2$, $s^2$, Var)
+
+`r if(lec){"
+- Kann für mindestens intervallskalierte Daten berechnet werden
+- Berechnet sich aus der Summe der quadrierten Abweichungen aller Messwerte vom arithmetischen Mittel, dividiert durch die Anzahl aller Messwerte
+- Die Varianz nimmt als umso größere Werte an, je stärker die Messwerte von ihrem Mittelwert abweichen."}`
+
+$$ Var(x) = s^2 = \frac{1}{n-1}*\sum_{i=1}^{n}\left( x_i - \bar{x}  \right)^2$$
+
+`r if(lec){"Hinweis: Vielleicht findest du wo anders auch eine Formel, in der nur durch n statt nur (n-1) dividiert wird. Das ist die Formel für die Varianz der Population. Für die Varianz der Stichprobe ist n-1 präziser.
+
+Schauen wir uns nochmal die Formel (der Population) genau an um zu verstehen, was sie bedeutet. Betrachten wir die Teile im Einzelnen."}`
+
+$$ \frac{1}{n}*\sum_{i=1}^{n}\left( \dots  \right)^2$$
+
+`r if(lec){"
+Das sollte uns an den Mittelwert erinnern. Was wir also berechnen, ist ein Durchnschnitt von etwas. Aber von was?"}`
+
+$$ \left( x_i - \bar{x}  \right)^2$$
+
+
+`r if(lec){"Dieser Teil zeigt uns, dass es um (quadrierte) Abstände geht (die Abstände zwischen den jeweiligen Werten des Datensatzes und dem Mittelwert des Datensatzes). Warum wird quadriert? Das wird gemacht, damit sich positive und negative Abstände nicht (zu Null) summieren. Uns interessieren die absoluten Abstände (und eine quadrierte Zahl ist auf jeden Fall positiv)"}`
+
+
+> **Frage:** Berechne die Varianz der Beispieldaten.
+
+```{r, echo=TRUE}
+var(data)
+```
+
+`r if(!lec){"-------"}`
+
+> **Frage:** Berechne die Varianz der Daten {1, 2, 6} händisch.
+
+```{r, echo=TRUE}
+dat <- c(1, 2, 6)
+(n <- length(dat))
+(x <- mean(dat))
+(zaehler <- (1-x)^2+(2-x)^2+(6-x)^2)
+
+```
+
+`r if(!lec){"-------"}`
+
+```{r, echo=TRUE}
+(var_pop <- zaehler/n)
+(var_sample <- zaehler/(n-1))
+```
+
+
+`r if(!lec){"-------"}`
+
+### Standardabweichung ($\sigma$, $s$, SD)
+`r if(lec){"Die Standardabweichung ist definiert als die Wurzel der Varianz. Varianz und Standardabweichung sind relative Maßzahlen; sie können immer nur in Relation zum arithmetischen Mittel und/oder anderen Varianzen und Standardabweichungen sinnvoll interpretiert werden.
+
+Wie sehr streut die Verteilung (A) gegenüber der Verteilung (B)?
+
+Besonderheit Normalverteilung:
+
+- 68,3% der Beobachtungen im Intervall +/- s
+- 95,4% der Beobachtungen im Intervall +/- 2s
+- 99,7% der Beobachtungen im Intervall +/- 3s"}`
+
+$$ s = \sqrt{Var(x)}$$
+
+> **Frage:** Berechne die Standardabweichung der Beispieldaten.
+
+```{r, echo=TRUE}
+sd(data)
+```
+
+`r if(!lec){"-------"}`
+### Exkurs: Statistik vs. Parameter
+Sind alle Merkmalsausprägungen der Grundgesamtheit bekannt, wird die Standardabweichung der Grundgesamtheit verwendet, zum Beispiel wenn ein Lehrer berechnen will, wie gut seine SchülerInnen durchschnittlich bei einem Test abgeschnitten haben und wie die Ergebnisse verteilt sind. 
+
+Im Bereich der Bildungswissenschaften wird man selten alle Werte kenne. Durch eine Studie (Umfrage, ...) kennt man die Merkmalsausprägungen der Personen der Stichprobe. Berechnet man hier die Standardabweichung, wird jene der Stichprobe verwendet.
+### Variationskoeffizient
+
+$cv = \frac{s}{\bar{x}}$
+
+## Übungen "per Hand"
+
+Berechne alle besprochenen Lage- und Streuungsmaße der folgenden Daten mit der Hand / dem Taschenrechner.
+
+### Datensatz 1
+
+```{r, echo=FALSE}
+  set.seed(1)
+  dataEx1 <- sample(10, size = 5, replace = TRUE)
+  print(dataEx1)
+```
+
+### Datensatz 2
+
+```{r}
+  set.seed(2)
+  dataEx2 <- sample(10, size = 6, replace = TRUE)
+  print(dataEx2)
+```
+
+### Datensatz 3
+
+```{r}
+  set.seed(3)
+  dataEx3 <- sample(10, size = 5, replace = TRUE)
+  print(dataEx3)
+```
+
+
+### Lösung zu Datensatz 1
+```{r}
+  dataEx <- dataEx1
+  df <- data.frame(1, 1)
+  df$modus <- as.numeric(names(sort(-table(dataEx)))[1])
+  df$median <- median(dataEx)
+  df$mittelwert <- mean(dataEx)
+  df$iqr <- unname(quantile(dataEx)[4] - quantile(dataEx)[2])
+  df$sd <- sd(dataEx)
+  df$var <- var(dataEx)
+  df <- round(df[, -c(1:2)], 2)
+  print(df)
+```
+
+### Lösung zu Datensatz 2
+```{r}
+dataEx <- dataEx2 
+  df <- data.frame(1, 1)
+  df$modus1 <- as.numeric(names(sort(-table(dataEx)))[1])
+  df$modus2 <- as.numeric(names(sort(-table(dataEx)))[2])
+  df$median <- median(dataEx)
+  df$mittelwert <- mean(dataEx)
+  df$iqr <- unname(quantile(dataEx)[4] - quantile(dataEx)[2])
+  df$sd <- sd(dataEx)
+  df$var <- var(dataEx)
+  df <- round(df[, -c(1:2)], 2)
+  print(df)
+```
+
+### Lösung zu Datensatz 3
+```{r}
+dataEx <- dataEx3
+  df <- data.frame(1, 1)
+  df$modus <- as.numeric(names(sort(-table(dataEx)))[1])
+  df$median <- median(dataEx)
+  df$mittelwert <- mean(dataEx)
+  df$iqr <- unname(quantile(dataEx)[4] - quantile(dataEx)[2])
+  df$sd <- sd(dataEx)
+  df$var <- var(dataEx)
+  df <- round(df[, -c(1:2)], 2)
+  print(df)
+```
+
+
+## Übungen mit Software
+Berechne alle besprochenen Lage- und Streuungsmaße der Daten aus Datei "Daten 1.csv" mit dem Computer
+
+### Lösung
+
+```{r}
+  set.seed(500)
+  dataEx500 <- sample(1000, size = 515, replace = TRUE)
+  
+write.csv2(x = dataEx500, file = "Data//Daten 1.csv")
+
+dataEx <- dataEx500
+  df <- data.frame(1, 1)
+  df$modus <- as.numeric(names(sort(-table(dataEx)))[1])
+  df$median <- median(dataEx)
+  df$mittelwert <- mean(dataEx)
+  df$iqr <- unname(quantile(dataEx)[4] - quantile(dataEx)[2])
+  df$sd <- sd(dataEx)
+  df$var <- var(dataEx)
+  df <- round(df[, -c(1:2)], 2)
+  print(df)
+```
+
+`r if(!lec){"
+-------
+
+Ende der Lektion.
+"}`
+
+## Umsetzung in Software
+
+In PSPP
+
+`r LINK("https://youtu.be/PF9B3uJDq4w")`
+
+<!-- ********************************** -->

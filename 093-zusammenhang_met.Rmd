@@ -1,0 +1,68 @@
+# Metrische Zusammenhangsmaße / Korrelation ($\rho$, r)
+
+`r LINK("https://youtu.be/8CKBPdflFEs")`
+
+## Vorbereitung [INKL. REGRESSION!]
+- OS3: 7, 8.1-8.3
+- IS: 12
+- K13: 9, 11
+- Video: https://www.khanacademy.org/math/statistics-probability/advanced-regression-inference-transforming/nonlinear-regression/v/comparing-models-to-fit-data
+
+## Problemstellung
+
+
+## Anknüpfungspunkte
+- Skalenniveaus (intervall/metrisch)
+- Zusammenhangsmaße
+- Signifikanztests
+
+## Allgemeines
+- Pearson's r
+    - Symmetrische Maßzahl`r if(lec){": zwischen -1 und 1"}`
+    - Stärke`r if(lec){":
+        - 0.3 ~ schwacher Zusammenhang
+        - 0.5 ~ mittlerer Zusammenhang
+        - 0.7 ~ starker Zusammenhang"}`
+        
+## Voraussetzungen
+- intervallskalierte Variablen`r if(lec){": Falls nicht gegeben auf Spearman's rho ausweichen."}`
+- Normalverteilung der Variablen`r if(lec){": Falls nicht gegeben auf Spearman's rho ausweichen."}`
+
+## Beispiel
+Wir berechnen die Korrelation zwischen x1 und y.
+```{r, include=FALSE}
+N <- 200
+set.seed(3)
+x1 <- rnorm(n = N, mean = 0, sd = 1)
+set.seed(4)
+x2 <- rnorm(n = N, mean = 0, sd = 1)
+set.seed(3)
+sex <- sample(x = c(0, 1), size = N, replace = TRUE)
+y <- 1 + sex*0.01 + x1*0.24 + x2*0.02 + rnorm(N)
+df <- data.frame(x1, x2,sex, y)
+#write.csv2(x = df, file = "regression1.csv")
+```
+
+
+```{r}
+r <- cor(x1, y)
+r
+```
+
+Hier ist die Visualisierung:
+
+```{r}
+plot(x1, y)
+abline(lm(y~x1), col="red")
+```
+
+##Übung
+TBA
+
+
+`r if(!lec){"
+-------
+
+Ende der Lektion.
+"}`
+

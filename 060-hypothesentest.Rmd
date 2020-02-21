@@ -1,0 +1,142 @@
+# Hypothesentests
+
+## Anknüpfungspunkte
+- Konfidenzintervalle
+
+## Vorbereitung
+- OS3: 4
+- IS: 9
+- Ps: 13
+- K13: 6
+- Video: https://www.khanacademy.org/math/statistics-probability/confidence-intervals-one-sample
+- Video: https://www.khanacademy.org/math/statistics-probability/significance-tests-one-sample#idea-of-significance-tests
+
+## Problemstellung
+Wir möchten feststellen, ob sich basierend auf unserer Stichprobe ein Unterschied oder ein Zusammenhang von Variablen in der Grundgesamtheit feststellen lässt.
+
+## Allgemeines
+- Ziel`r if(lec){": Hypothesen über die unbekannte Grundgesamtheit anhand einer Stichprobe testen"}`
+- Forschungshypothese/Alternativhypothese (H1)`r if(lec){": sagt häufig aus, dass ein Effekt präsent ist bzw. Unterschiede existieren oder ein Zusammenhang besteht."}`
+- Nullhypothese (H0)`r if(lec){": sagt häufig aus, dass kein Effekt bzw. Unterschied vorliegt oder dass ein bestimmter Zusammenhang nicht besteht."}`
+
+### Beispiel
+- H1: Männer und Frauen verdienen in Österreich im Durchschnitt unterschiedlich viel.
+- H0: Männer und Frauen verdienen in Österreich im Durchschnitt gleich viel.
+    - noch klarer: Männer und Frauen verdienen in Österreich im Durchschnitt *nicht unterschiedlich* viel.
+
+## Logik der Nullhypothese
+- Wir gehen davon aus, dass die Nullhypothese zutrifft und schauen unser Stichprobenergebnis an. Ist dieses sehr unwahrscheinlich unter Gültigkeit der Nullhypothese, so weisen wir die Nullhypothese zurück und akzeptieren die Alternativhypothese.
+- Aber: weder Nullhypothese noch Alternativhypothese können auf der Basis eines Signifikanztests "bewiesen" werden!
+
+## Signifikanztest
+Ein statistischer Test (Signifikanztest) ist ein Verfahren, das es erlaubt auf der Basis einer Stichprobe mit einer gewissen Irrtumswahrscheinlichkeit zwischen zwei konkurrierenden wissenschaftlichen Hypothesen zu entscheiden.
+
+Wenn es eine hinreichende Übereinstimmung zwischen der Hypothese und der Beobachtung gibt, ist die Hypothese vorläufig unterstützt.
+
+## Exkurs: Geschichte
+- John Arbuthnot (1667-1735): Leibarzt von Queen Anne
+- Auszählung von Geburtsregistern von 82 Jahrgängen
+- Anzahl der Knabengeburten (K = 82) > Anzahl der Mädchengeburten (M = 0)
+- Wie wahrscheinlich ist das (bei Gültigkeit der Nullhypothese)?
+
+$$ H0: P(K) = P(M) = 0.5 $$ 
+
+## Wahrscheinlichkeit
+- Verteilung bekannt`r if(lec){": Die Teststatistik hat bekannte Eigenschaften: wir wissen, wie häufig bestimmte Werte dieser Verteilung auftreten (z.B. auf der Basis der Normalverteilung)"}`
+- Wahrscheinlichkeit berechenbar`r if(lec){": wir können berechnen, wie wahrscheinlich es ist dieses Stichprobenergebnis oder ein noch extremeres zu erhalten, vorausgesetzt, dass kein Effekt/Zusammenhang in der Grundgesamtheit besteht."}`
+- $p$-Wert
+
+## Schritte eines Hypothesentests
+- Test wählen
+- Voraussetzungen prüfen
+    - Skalenniveau der Daten
+    - Randomisierung
+    - Verteilung der Variablen
+    - Stichprobengröße
+- Hypothesen aufstellen 
+    - Nullhypothese
+    - Alternativhypothese
+- Teststatistik berechnen
+- $p$-Wert berechnen
+- Schlussfolgerung
+    - Ablehnung der H0 und Annahme der H1 oder Beibehaltung der H0. 
+
+## Fehler im Hypothesentest
+- $\alpha$-Fehler = Fehler 1. Art; $p = \alpha$ `r if(lec){": H0 ist wahr, H0 wird aber verworfen. Entscheidung für die Alternativhypothese, obwohl die Nullhypothese richtig ist."}`
+- $\beta$-Fehler = Fehler 2. Art`r if(lec){": H1 ist wahr, H0 wird aber nicht verworfen. Entscheidung für die Nullhypothese, obwohl die Alternativhypothese richtig ist."}`
+- Die Fehler sind abhängig voneinander`r if(lec){": Verringert man den Fehler 1. Art, so erhöht man gleichzeitig den Fehler 2. Art."}`
+
+&nbsp;        | H0 wahr | H0 falsch
+------------|----------|----------
+H0 annehmen | OK | $\beta$
+H0 ablehnen | $\alpha$ | OK
+
+## FAQ
+**Frage:** Bei einer Regression von Ablenkbarkeit auf Zeitmanagement ist p = 0.029. Was bedeutet das?
+
+**Antwort:** Es gibt eine Wahrscheinlichkeit (p) von 2,9% aufgrund der Stichprobe zu sagen, dass Zeitmanagement einen Einfluss auf Ablenkbarkeit hat, obwohl es diesen Effekt in der Grundgesamtheit nicht gibt". 
+
+<!-- *****CLOSING CHUNK************ -->
+## Übungen
+### (1) Bilde je eine Hypothese: 
+- mit Lehrerzufriedenheit als unabhängige Variable und Schulklima als abhängige Variable. - mit Schulklima als unabhängige Variable und Lehrerzufriedenheit als abhängige Variable.
+- mit Lehrerzufriedenheit und Schulklima als unabhängigen Variablen.
+
+### (2) Was ist an den folgenden Hypothesen gut/schlecht: 
+
+- (a) Unter welchen Bedingungen lassen sich Lernstrategien auf neue Situationen übertragen? - (b) Junge Lehrer sind bei den Schülern beliebter, weil sie die Interessen der Schüler  besser kennen. 
+- (c) Burschen aus höheren sozialen Schichten werden von männlichen Lehrkräften im Mathematikunterricht stärker gefördert. 
+- (d) Antiautoritäre Erziehung macht frei. 
+- (e) Lehrer sind nicht bereit, auf alternative Formen der Leistungsbeurteilung  umzusteigen, unter dem Vorwand, dass die Eltern großen Wert auf Ziffernnoten 
+legen. 
+- (f) Prüfungsangst vermindert die Punktzahl bei einem Leistungstest. 
+- (g)  Schüler werden auf Grund ihrer sozialen Herkunft in die Sonderschule abgeschoben. 
+- (h)  Junge Lehrer sind engagierter. 
+- (i)   Autoritäres Lehrerverhalten führt zu einem schlechten Lernerfolg. 
+- j)   Das Verhalten bei Fingermalaufgaben wird von der sozialen Schichtzugehörigkeit beeinflusst. 
+- (k)  Gruppenarbeit ist gut für Kinder. 
+- (l)   Ziffernnoten sind bei Lehrern beliebter, weil sie weniger Arbeit machen. 
+- (m) Hat Angst Auswirkungen auf die Leistung? 
+
+### (3) Formulieren Sie Hypothesen zu folgenden Themen:
+- (a)  Essstörungen bei Mädchen und Buben in verschiedenen Schultypen 
+- (b)  Vergleich der Schulnoten zwischen 2. und 7. Klasse AHS 
+- (c)  Berufszufriedenheit von Lehrern 
+- (d)  Vergleich der Englischkenntnisse zwischen österreichischen und Migrantenkindern 
+
+## Lösungen
+
+### (1) Lösung
+- Die Lehrerzufriedenheit hat einen Einfluss auf das Schulklima. 
+- Das Schulklima wirkt sich auf die Lehrerzufriedenheit aus. 
+- Die Lehrerzufriedenheit und das Schulklima beeinflussen die Noten der Schüler. 
+
+### (2) Lösung
+- Das ist keine Hypothese sondern eine Frage. Eine Hypothese wäre eine (vermutete) Antwort auf diese Frage. 
+- Es ist (fast) unmöglich, durch quantitative Forschung festzustellen, warum etwas so 
+ist. Besser wäre daher, den zweiten Teil der Hypothese zu streichen. 
+-  ...als wer? Als Burschen aus niedrigen sozialen Schichten? Als Mädchen aus höheren sozialen Schichten? Als Burschen von weiblichen Lehrkräften? Als Mädchen im Englischunterricht? Antwort: Zu viele Fragestellungen in eine Hypothese gepackt. Ausformuliert wären das 3-4 Hypothesen. 
+- Macht wen frei? "Freiheit" ist schwer zu messen. Und selbst wenn, kann man nur schwer feststellen, ob antiautoritäre Erziehung tatsächlich der Grund dafür ist. 
+-  Es ist durch quantitative Forschung sehr schwer festzustellen, ob der Elternwunsch 
+von den Lehrern als Vorwand benutzt wird, oder ob er der tatsächliche Grund ist. Jedenfalls müssten dazu Lehrer und Eltern befragt werden. 
+-  Gut. 
+-  Es ist durch quantitative Forschung sehr schwer festzustellen, ob Schüler auf Grund
+ihrer sozialen Herkunft abgeschoben werden. Die Feststellung, dass Schüler aus unteren sozialen Schichten in der Sonderschule überrepräsentiert sind, würde diese Hypothese jedenfalls nicht bestätigen. Es ist nämlich genauso gut möglich, dass Schüler aus unteren sozialen Schichten zu Hause weniger gefördert werden, daher schlechtere Schulleistungen erbringen, und daher auf Grund der Schulleistungen in die Sonderschule überstellt werden. - ...als wer? "Engagiertheit" ist sehr schwer quantitativ zu erfassen. Wann ist jemand engagiert? 
+- ...bei wem? "Autorität" ist sehr schwer quantitativ zu erfassen. Wann ist jemand autoritär?
+- "Verhalten" ist zu allgemein. Welches Verhalten? 
+- Was heißt "gut"? 
+- Warum Ziffernnoten beliebter sind, ist durch quantitative Forschung sehr schwer herauszufinden. Es muss damit gerechnet werden, dass Lehrer sozial erwünscht antworten und andere Gründe vorgeben. 
+- Das ist keine Hypothese sondern eine Frage. Auswirkung auf welche Leistung? 
+
+### (3) Lösungen 
+- Essstörungen treten sowohl in der AHS als auch in der BHS bei Mädchen häufiger auf als bei Buben. 
+- Die Streuung der Geschichtenoten ist in der 7. Klasse geringer als in der 2. Klasse. 
+- Die Berufszufriedenheit von Lehrern nimmt mit dem Dienstalter ab. 
+- In der 2. Klasse AHS unterscheiden sich die Englischnoten österreichischer Kinder nicht von den Englischnoten von Migrantenkindern. 
+
+`r if(!lec){"
+-------
+
+Ende der Lektion.
+"}`
+<!-- ********************************** -->

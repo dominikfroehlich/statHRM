@@ -1,0 +1,40 @@
+# Software
+
+## IBM SPSS Statistics bzw. PSPP
+
+
+
+### Dateiformate
+
+`r LINK("https://youtu.be/f7qft7LK6S8")`
+
+Wichtige Datienformate sind
+
+- für **Daten**
+    - .sav`r if(lec){" (das SPSS Standard-Datenformat)"}`
+    - .csv`r if(lec){" (ein einfacher Text mit [comma separated values](https://en.wikipedia.org/wiki/Comma-separated_values))"}`
+- für **Syntax**
+    - .sps`r if(lec){" (das SPSS Standard-Syntaxformat)"}`
+- für Ausgaben
+    - .spv
+    
+## R
+R ist eine frei verfügbare, statistische Programmiersprache.
+
+## Allgemeines
+R hat eine sehr aktive onine Community. Bei Fragen findet eine kurze Suche oft zu guten Lösungen -- nutze diese Möglichkeit! Es gibt bereits so viel Einführungsmaterial für R (auch auf Deutsch [@Manderscheid2012]), dass sich dieses Kapitel eigentlich erübrigt. Viele Texte enthalten aber viel zu viele Informationen, die ich für nicht notwendig für die Praxis bzw. den Einstieg in R erachte. Daher möchte ich ganz kurz die wichtigsten Befehle erwähnen; für das "Verstehen" der Inhalte muss aber eventuell in anderen Quellen nachgeschlagen werden.
+
+## Installation & Setup
+Neben der Installation von R empfehle ich die Installation von RStudio.
+
+## Packages
+Durch packages kann die Funkionalität Rs sehr flexibel erweitert werden. Packages müssen zuerst mit install.packages() installiert werden und können dann mit library() geladen werden.
+
+## Allgemeiner Syntax
+- Funktionen werden mit function() augerufen.
+    - Innerhalb der Klammer befinden sich dann die Argumente.
+- Die Raute wird für Kommentare benutzt
+- Zuweisungen erfolgen mit "<-"
+
+
+
