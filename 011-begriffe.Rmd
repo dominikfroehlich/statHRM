@@ -8,7 +8,7 @@
 - Generierung von Wissen
     - **Induktion**: Von Beobachtung zur allgemeinen Aussage
     - **Deduktion**: Von Theorie zu Einzelaussage
-    - Abduktion: Von einer Beobachtung wird auf Gesetzmäßigkeit UND Ursache geschlossen   
+    - **Abduktion**: Von einer Beobachtung wird auf Gesetzmäßigkeit UND Ursache geschlossen   
 - Untersuchungsgegenstand: Um was geht es in diesem Forschungsprojekt?
 - Gegenstandsangemessenheit: Forschung soll sich  auf eine angemessene und verständnisorientierte Art und Weise dem Feld annähern.
 
