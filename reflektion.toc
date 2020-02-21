@@ -1,0 +1,219 @@
+\contentsline {chapter}{\numberline {1}Über dieses Buch}{9}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Allgemeines}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Grundsätzliches}{11}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Definition Statistik}{12}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Überblick über den Prozess quantitativer Forschung}{12}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Warum Statistik?}{12}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Ziele der Statistik}{13}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Wichtige Begriffe}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Allgemeines}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Datenerhebung}{15}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Variablen und Fälle}{16}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Datenauswertung}{18}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Übung mit Software}{19}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Wiederholungsfragen}{19}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Software}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}IBM SPSS Statistics bzw. PSPP}{21}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Dateiformate}{21}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}R}{21}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Allgemeines}{21}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Installation \& Setup}{22}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Packages}{22}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Allgemeiner Syntax}{22}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Das Beispielprojekt: Froehlich et al.\nobreakspace {}2014 / Datenimport}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Dateien}{23}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Übersicht}{23}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Daten importieren}{24}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}in R}{24}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}in SPSS}{26}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Daten manipulieren}{27}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Items umkodieren}{27}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}in R}{27}{subsection.5.4.2}%
+\contentsline {chapter}{\numberline {6}Datenerhebung}{29}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Problemstellung}{29}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Verschiedene Verfahren der Stichprobenziehung}{29}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Fehlerquellen bei der Stichprobenziehung}{30}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Erhebungsarten}{30}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Stichprobengröße}{30}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Gütekriterien}{30}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Messen}{31}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Messniveau}{31}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Diskussion von Prüfungsfragen:}{32}{subsection.6.7.2}%
+\contentsline {section}{\numberline {6.8}Messniveau Zusammenfassung}{33}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Demonstration in SPSS}{33}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Aufgabe}{33}{subsection.6.9.1}%
+\contentsline {section}{\numberline {6.10}Übungen}{33}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Wiederholungsfragen}{33}{section.6.11}%
+\contentsline {section}{\numberline {6.12}Datenmanagement}{33}{section.6.12}%
+\contentsline {section}{\numberline {6.13}Items zusammenfassen}{34}{section.6.13}%
+\contentsline {section}{\numberline {6.14}Weiterführend}{34}{section.6.14}%
+\contentsline {chapter}{\numberline {7}Fragebogenkonstruktion}{35}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Vorbereitung}{35}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Fragebogen}{35}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Stärken}{35}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Schwächen}{36}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}Fragebogen wird beeinflusst von}{36}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Befragungsarten}{36}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Items}{36}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Arten von Fragen}{37}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Offene vs.\nobreakspace {}geschlossene Fragen}{37}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Geschlossene Fragen}{37}{subsection.7.7.1}%
+\contentsline {subsection}{\numberline {7.7.2}Offene Fragen}{37}{subsection.7.7.2}%
+\contentsline {section}{\numberline {7.8}Kriterien für gute Fragen}{37}{section.7.8}%
+\contentsline {section}{\numberline {7.9}Quellen für Fragen}{37}{section.7.9}%
+\contentsline {section}{\numberline {7.10}Antwortskalen}{38}{section.7.10}%
+\contentsline {section}{\numberline {7.11}Aufbau Fragebogen}{38}{section.7.11}%
+\contentsline {section}{\numberline {7.12}Häufige Probleme}{39}{section.7.12}%
+\contentsline {section}{\numberline {7.13}Übungen}{39}{section.7.13}%
+\contentsline {section}{\numberline {7.14}Weiterführend}{39}{section.7.14}%
+\contentsline {chapter}{\numberline {8}Lage und Streuung}{41}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Anknüpfungspunkte}{41}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Beispieldaten}{41}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Lagemaße (Maße der zentralen Tendenz)}{42}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Modus (Modalwert)}{42}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Median}{43}{subsection.8.3.2}%
+\contentsline {subsection}{\numberline {8.3.3}Arithmetisches Mittel (\(\mu \), \(\bar {x}\), Mittelwert)}{43}{subsection.8.3.3}%
+\contentsline {section}{\numberline {8.4}Schiefe und Kurtosis}{43}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Schiefe (skew, v)}{43}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}Kurtosis (Wölbung)}{45}{subsection.8.4.2}%
+\contentsline {section}{\numberline {8.5}Quantile, Quartile, Dezile, Perzentile}{47}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Streuungsmaße}{47}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Spannweite (Range)}{47}{subsection.8.6.1}%
+\contentsline {subsection}{\numberline {8.6.2}(Inter-)Quartilsabstand (IQR)}{47}{subsection.8.6.2}%
+\contentsline {subsection}{\numberline {8.6.3}Varianz (\(\sigma ^2\), \(s^2\), Var)}{48}{subsection.8.6.3}%
+\contentsline {subsection}{\numberline {8.6.4}Standardabweichung (\(\sigma \), \(s\), SD)}{49}{subsection.8.6.4}%
+\contentsline {subsection}{\numberline {8.6.5}Exkurs: Statistik vs.\nobreakspace {}Parameter}{49}{subsection.8.6.5}%
+\contentsline {section}{\numberline {8.7}Übungen ``per Hand''}{50}{section.8.7}%
+\contentsline {subsection}{\numberline {8.7.1}Datensatz 1}{50}{subsection.8.7.1}%
+\contentsline {subsection}{\numberline {8.7.2}Datensatz 2}{50}{subsection.8.7.2}%
+\contentsline {subsection}{\numberline {8.7.3}Datensatz 3}{50}{subsection.8.7.3}%
+\contentsline {subsection}{\numberline {8.7.4}Lösung zu Datensatz 1}{50}{subsection.8.7.4}%
+\contentsline {subsection}{\numberline {8.7.5}Lösung zu Datensatz 2}{50}{subsection.8.7.5}%
+\contentsline {subsection}{\numberline {8.7.6}Lösung zu Datensatz 3}{50}{subsection.8.7.6}%
+\contentsline {section}{\numberline {8.8}Übungen mit Software}{50}{section.8.8}%
+\contentsline {subsection}{\numberline {8.8.1}Lösung}{51}{subsection.8.8.1}%
+\contentsline {section}{\numberline {8.9}Umsetzung in Software}{51}{section.8.9}%
+\contentsline {chapter}{\numberline {9}Verteilungen}{53}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Anknüpfungspunkte}{53}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Vorbereitung}{53}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Normalverteilung}{53}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Zentraler Grenzwertsatz}{53}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Zentraler Grenzwertsatz - Demonstration, uniforme Verteilung}{54}{section.9.5}%
+\contentsline {section}{\numberline {9.6}Zentraler Grenzwertsatz - Demonstration, Poisson Verteilung}{55}{section.9.6}%
+\contentsline {section}{\numberline {9.7}Standardnormalverteilung}{55}{section.9.7}%
+\contentsline {subsection}{\numberline {9.7.1}Wichtige Punkte der Normalverteilung}{55}{subsection.9.7.1}%
+\contentsline {section}{\numberline {9.8}Standardnormalverteilung - Visualisierung}{56}{section.9.8}%
+\contentsline {section}{\numberline {9.9}z-Transformation}{56}{section.9.9}%
+\contentsline {section}{\numberline {9.10}z-Transformation - Beispiel}{57}{section.9.10}%
+\contentsline {section}{\numberline {9.11}Wieso Standardisierung?}{57}{section.9.11}%
+\contentsline {section}{\numberline {9.12}Übung mit Software}{57}{section.9.12}%
+\contentsline {section}{\numberline {9.13}Lösung der Übung}{58}{section.9.13}%
+\contentsline {subsection}{\numberline {9.13.1}Bildung des Mittelwerts (SPSS Syntax)}{58}{subsection.9.13.1}%
+\contentsline {chapter}{\numberline {10}Inferenzstatistik (schließende Statistik)}{61}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Anknüpfungspunkte}{61}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Vorbereitung}{61}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Allgemeines}{61}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}Schätzer}{61}{subsection.10.3.1}%
+\contentsline {section}{\numberline {10.4}Standardfehler (SE) des Mittelwerts}{62}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Konfidenzintervall (CI)}{62}{section.10.5}%
+\contentsline {section}{\numberline {10.6}Konfidenzintervall (CI) - Berechnungsbeispiel in R}{62}{section.10.6}%
+\contentsline {section}{\numberline {10.7}Konfidenzintervall (CI) - Weite}{63}{section.10.7}%
+\contentsline {section}{\numberline {10.8}Demonstration von Population, Stichprobenziehung, Standardfehler}{63}{section.10.8}%
+\contentsline {subsection}{\numberline {10.8.1}Population}{63}{subsection.10.8.1}%
+\contentsline {subsection}{\numberline {10.8.2}Stichprobe}{64}{subsection.10.8.2}%
+\contentsline {subsection}{\numberline {10.8.3}Größere Stichprobe}{66}{subsection.10.8.3}%
+\contentsline {section}{\numberline {10.9}Übung}{67}{section.10.9}%
+\contentsline {section}{\numberline {10.10}Lösung}{67}{section.10.10}%
+\contentsline {chapter}{\numberline {11}Hypothesentests}{69}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Anknüpfungspunkte}{69}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Vorbereitung}{69}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Problemstellung}{69}{section.11.3}%
+\contentsline {section}{\numberline {11.4}Allgemeines}{69}{section.11.4}%
+\contentsline {subsection}{\numberline {11.4.1}Beispiel}{70}{subsection.11.4.1}%
+\contentsline {section}{\numberline {11.5}Logik der Nullhypothese}{70}{section.11.5}%
+\contentsline {section}{\numberline {11.6}Signifikanztest}{70}{section.11.6}%
+\contentsline {section}{\numberline {11.7}Exkurs: Geschichte}{70}{section.11.7}%
+\contentsline {section}{\numberline {11.8}Wahrscheinlichkeit}{70}{section.11.8}%
+\contentsline {section}{\numberline {11.9}Schritte eines Hypothesentests}{71}{section.11.9}%
+\contentsline {section}{\numberline {11.10}Fehler im Hypothesentest}{71}{section.11.10}%
+\contentsline {section}{\numberline {11.11}FAQ}{71}{section.11.11}%
+\contentsline {section}{\numberline {11.12}Übungen}{72}{section.11.12}%
+\contentsline {subsection}{\numberline {11.12.1}(1) Bilde je eine Hypothese:}{72}{subsection.11.12.1}%
+\contentsline {subsection}{\numberline {11.12.2}(2) Was ist an den folgenden Hypothesen gut/schlecht:}{72}{subsection.11.12.2}%
+\contentsline {subsection}{\numberline {11.12.3}(3) Formulieren Sie Hypothesen zu folgenden Themen:}{73}{subsection.11.12.3}%
+\contentsline {section}{\numberline {11.13}Lösungen}{73}{section.11.13}%
+\contentsline {subsection}{\numberline {11.13.1}(1) Lösung}{73}{subsection.11.13.1}%
+\contentsline {subsection}{\numberline {11.13.2}(2) Lösung}{73}{subsection.11.13.2}%
+\contentsline {subsection}{\numberline {11.13.3}(3) Lösungen}{74}{subsection.11.13.3}%
+\contentsline {chapter}{\numberline {12}Visualisierung}{75}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Allgemeines}{75}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Histogramm}{75}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Boxplot}{76}{section.12.3}%
+\contentsline {section}{\numberline {12.4}Scatterplot}{77}{section.12.4}%
+\contentsline {section}{\numberline {12.5}Bar-Chart}{78}{section.12.5}%
+\contentsline {chapter}{\numberline {13}t-Test (und U-Test)}{79}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Vorbereitung}{79}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Problemstellung}{79}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Anknüpfungspunkte}{79}{section.13.3}%
+\contentsline {section}{\numberline {13.4}Allgemeines}{79}{section.13.4}%
+\contentsline {section}{\numberline {13.5}Voraussetzungen t-Test}{80}{section.13.5}%
+\contentsline {section}{\numberline {13.6}Beispiel}{80}{section.13.6}%
+\contentsline {section}{\numberline {13.7}Umsetzung mit Software}{80}{section.13.7}%
+\contentsline {subsection}{\numberline {13.7.1}Beispiel - Visualisierung}{81}{subsection.13.7.1}%
+\contentsline {subsection}{\numberline {13.7.2}Beispiel - t-Test Gruppen 0/1}{81}{subsection.13.7.2}%
+\contentsline {subsection}{\numberline {13.7.3}Beispiel - t-Test Gruppen 0/1: Interpretation}{81}{subsection.13.7.3}%
+\contentsline {subsection}{\numberline {13.7.4}Beispiel - t-Test Gruppen 0/2}{82}{subsection.13.7.4}%
+\contentsline {subsection}{\numberline {13.7.5}Beispiel - t-Test Gruppen 0/2: Interpretation}{82}{subsection.13.7.5}%
+\contentsline {section}{\numberline {13.8}Übung}{82}{section.13.8}%
+\contentsline {section}{\numberline {13.9}Lösung}{83}{section.13.9}%
+\contentsline {section}{\numberline {13.10}Student Voice}{84}{section.13.10}%
+\contentsline {section}{\numberline {13.11}Übung}{84}{section.13.11}%
+\contentsline {section}{\numberline {13.12}Lösung ttest2.csv}{84}{section.13.12}%
+\contentsline {subsection}{\numberline {13.12.1}Levene Test}{84}{subsection.13.12.1}%
+\contentsline {subsection}{\numberline {13.12.2}t-test}{84}{subsection.13.12.2}%
+\contentsline {section}{\numberline {13.13}Lösung ttest3.csv}{85}{section.13.13}%
+\contentsline {subsection}{\numberline {13.13.1}Levene Test}{85}{subsection.13.13.1}%
+\contentsline {subsection}{\numberline {13.13.2}t-test}{85}{subsection.13.13.2}%
+\contentsline {chapter}{\numberline {14}Varianzanalyse (ANOVA)}{87}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Problemstellung}{87}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Anknüpfungspunkte}{87}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Allgemeines}{87}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Post-Hoc Tests}{88}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Voraussetzungen ANOVA}{88}{section.14.5}%
+\contentsline {section}{\numberline {14.6}Beispiel - ANOVA (ttest1.csv)}{88}{section.14.6}%
+\contentsline {section}{\numberline {14.7}{[}!!!{]} Exkurs: ANOVA mit der Hand}{89}{section.14.7}%
+\contentsline {section}{\numberline {14.8}Student Voice}{89}{section.14.8}%
+\contentsline {section}{\numberline {14.9}Übung}{90}{section.14.9}%
+\contentsline {subsection}{\numberline {14.9.1}Lösung}{90}{subsection.14.9.1}%
+\contentsline {section}{\numberline {14.10}Weitere Übungen \& Fragen}{91}{section.14.10}%
+\contentsline {chapter}{\numberline {15}Nominale Zusammenhangsmaße}{93}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Vorbereitung}{93}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Problemstellung}{93}{section.15.2}%
+\contentsline {section}{\numberline {15.3}Anknüpfungspunkte}{93}{section.15.3}%
+\contentsline {section}{\numberline {15.4}Allgemeines}{93}{section.15.4}%
+\contentsline {section}{\numberline {15.5}\(\chi ^2\)-basierte Zusammenhangsmaße}{94}{section.15.5}%
+\contentsline {section}{\numberline {15.6}Voraussetzungen}{94}{section.15.6}%
+\contentsline {section}{\numberline {15.7}Beispiel Kreuztabelle und Cramer's V (crosstable1.csv)}{94}{section.15.7}%
+\contentsline {chapter}{\numberline {16}Ordinale Zusammenhangsmaße / Rangkorrelation}{97}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Problemstellung}{97}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Anknüpfungspunkte}{97}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Allgemeines}{97}{section.16.3}%
+\contentsline {section}{\numberline {16.4}Beispiel}{98}{section.16.4}%
+\contentsline {chapter}{\numberline {17}Metrische Zusammenhangsmaße / Korrelation (\(\rho \), r)}{99}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Vorbereitung {[}INKL. REGRESSION!{]}}{99}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Problemstellung}{99}{section.17.2}%
+\contentsline {section}{\numberline {17.3}Anknüpfungspunkte}{99}{section.17.3}%
+\contentsline {section}{\numberline {17.4}Allgemeines}{99}{section.17.4}%
+\contentsline {section}{\numberline {17.5}Voraussetzungen}{100}{section.17.5}%
+\contentsline {section}{\numberline {17.6}Beispiel}{100}{section.17.6}%
+\contentsline {chapter}{\numberline {18}Lineare Regression (OLS)}{101}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Problemstellung}{101}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Anknüpfungspunkte}{101}{section.18.2}%
+\contentsline {section}{\numberline {18.3}Allgemeines}{101}{section.18.3}%
+\contentsline {section}{\numberline {18.4}Güte der Regressionsfunktion}{102}{section.18.4}%
+\contentsline {section}{\numberline {18.5}Standardisierung}{102}{section.18.5}%
+\contentsline {subsection}{\numberline {18.5.1}Stärke der Effekte (nach Cohen)}{103}{subsection.18.5.1}%
+\contentsline {section}{\numberline {18.6}Voraussetzungen}{103}{section.18.6}%
+\contentsline {section}{\numberline {18.7}Dummy-Kodierung}{103}{section.18.7}%
+\contentsline {section}{\numberline {18.8}Beispiel (regression1.csv)}{103}{section.18.8}%
+\contentsline {section}{\numberline {18.9}Weiterführende Analysemöglichkeiten}{104}{section.18.9}%

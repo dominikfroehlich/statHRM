@@ -1,6 +1,7 @@
-book_filename: "reflektion"
+book_filename: "statHRM"
 language:
   ui:
     chapter_name: "Kapitel "
 lang: "de-DE"    
 delete_merged_file: true
+edit: https://github.com/dominikfroehlich/statHRM/blob/master/%s
