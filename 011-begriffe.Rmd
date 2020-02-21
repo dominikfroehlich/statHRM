@@ -6,7 +6,7 @@
 - Empirie: Auf Erfahrung, 'der Realität' beruhend.
 - Empirische Sozialforschung: systematische und reflektierte Erfassung und Interpretation von sozialen Tatbeständen (vgl. Kleining 2001, p. 209)
 - Generierung von Wissen
-    - Induktion: Von Beobachtung zur allgemeinen Aussage
+    - **Induktion**: Von Beobachtung zur allgemeinen Aussage
     - Deduktion: Von Theorie zu Einzelaussage
     - Abduktion: Von einer Beobachtung wird auf Gesetzmäßigkeit UND Ursache geschlossen   
 - Untersuchungsgegenstand: Um was geht es in diesem Forschungsprojekt?
