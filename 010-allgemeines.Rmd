@@ -1,6 +1,6 @@
 # Allgemeines
 
-In diesem Kapitel klären wir einige Grundbegriffe auf der "Meta-Eben". Wir beschäftigen uns hier mit den "großen" Fragen wie "Was können wir durch Statistik überhaupt wissen"?
+In diesem Kapitel klären wir einige Grundbegriffe auf der "Meta-Ebene". Wir beschäftigen uns hier mit den "großen" Fragen wie: **"Was können wir durch Statistik überhaupt wissen"?**
 
 ## Grundsätzliches
 
