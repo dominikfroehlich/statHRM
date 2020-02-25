@@ -120,6 +120,19 @@ Items setzen sich zusammen aus...
 - Mehrdimensionale Fragen`r if(lec){": Möchten Sie reich und berühmt sein?"}`
 - Keine Referenzangaben (z.B. Zeitangabe)`r if(lec){": How often do you feel tired? always, usually, sometimes, rarely, or never"}`
 
+## Praxis
+
+Fragen in Excel verwalten und durchschauen
+`r LINK("https://www.youtube.com/watch?v=GcslgDMV4Tg")`
+
+Online Fragebogenentwicklung in Unipark
+`r LINK("https://www.youtube.com/watch?v=VS9p8H3znw0")`
+
+Online Fragebogenentwicklung in LimeSurvey
+`r LINK("https://www.youtube.com/watch?v=JAi6HqSewxc")`
+
+`r LINK("https://www.youtube.com/watch?v=vSw5VAnp47M")`
+
 ## Übungen
 Was ist an folgenden Fragen gut/schlecht:
 
