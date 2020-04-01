@@ -31,7 +31,7 @@
         - Beispiele:
             -Raumtemperatur (unabhängige Variable) und das damit korrelierende Wohlbefinden (abhängige Variable) einer Testperson
             - Erziehungsstil (unabhängige Variable) und Berufswahl (abhängige Variable)"}`
-- Fälle`r if(lec){": Fälle stellen z.B. die befragten Personen dar. In der Datentabelle stehen sie typischer Weise in den Reihen."}`
+- Fälle`r if(lec){": Fälle stellen z.B. die befragten Personen dar. In der Datentabelle stehen sie typischerweise in den Reihen."}`
     - Merkmalsträger`r if(lec){": Personen haben individuelle Merkmale; Bsp: Geschlecht, Alter, Bildung, Familienstand, sozialer Status, Einkommen. Personenmehrheiten (Kollektive) haben Kollektivmerkmale. Wahlsprengel V hat das Merkmal Stimmenanteil Partei Y, Großstadt W hat das Merkmal Kriminalitätsrate, Staat X hat das Merkmal politische Verfassung, Haushalt Z hat das Merkmal Einkommen"}`
 - Wert = (Merkmals)Ausprägung`r if(lec){":
         - Jede Variable hat mindestens zwei Ausprägungen.
