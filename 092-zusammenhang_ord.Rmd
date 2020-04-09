@@ -1,4 +1,4 @@
-# Ordinale Zusammenhangsmaße / Rangkorrelation
+# Ordinaler Zusammenhang - Rangkorrelation
 
 ## Problemstellung
 Der Zusammenhang zwischen Variablen, die mindestens ordinales Skalenniveau haben, soll festgestellt werden.

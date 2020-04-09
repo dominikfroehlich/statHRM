@@ -1,4 +1,4 @@
-# Nominale Zusammenhangsmaße
+# Nominaler Zusammenhang
 
 ## Vorbereitung
 - K13: 4

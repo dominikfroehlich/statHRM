@@ -1,4 +1,4 @@
-# Inferenzstatistik (schließende Statistik)
+# Inferenzstatistik
 
 `r LINK("https://youtu.be/-63gq7Q1rBM")`
 

@@ -1,4 +1,4 @@
-# Metrische Zusammenhangsmaße / Korrelation ($\rho$, r)
+# Metrischer Zusammenhang - Korrelation
 
 `r LINK("https://youtu.be/8CKBPdflFEs")`
 
