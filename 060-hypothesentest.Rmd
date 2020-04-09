@@ -84,7 +84,8 @@ H0 ablehnen | $\alpha$ | OK
 
 ### (2) Was ist an den folgenden Hypothesen gut/schlecht: 
 
-- (a) Unter welchen Bedingungen lassen sich Lernstrategien auf neue Situationen übertragen? - (b) Junge Lehrer sind bei den Schülern beliebter, weil sie die Interessen der Schüler  besser kennen. 
+- (a) Unter welchen Bedingungen lassen sich Lernstrategien auf neue Situationen übertragen? 
+- (b) Junge Lehrer sind bei den Schülern beliebter, weil sie die Interessen der Schüler  besser kennen. 
 - (c) Burschen aus höheren sozialen Schichten werden von männlichen Lehrkräften im Mathematikunterricht stärker gefördert. 
 - (d) Antiautoritäre Erziehung macht frei. 
 - (e) Lehrer sind nicht bereit, auf alternative Formen der Leistungsbeurteilung  umzusteigen, unter dem Vorwand, dass die Eltern großen Wert auf Ziffernnoten 
