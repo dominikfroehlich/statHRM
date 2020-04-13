@@ -164,7 +164,7 @@ Der T-Test dient dem Vergleich zweier unabhängiger Stichproben bezüglich eines
 Sollten die Daten nicht intervallskaliert und normalverteilt sein, wendet man bei unabhängigen Stichproben den Mann-Whitney-U - Test an und bei gepaarten Stichproben den Wilcoxon-Vorzeichen-Rang- Test. 
 Der T-Test setzt außerdem eine Varianzhomogenität voraus. Die Varianzen der beiden Gruppen sollen also gleich groß sein.
 
-Zunächst einmal testet der T - Test, ob die Mittelwerte der Grundgesamtheit verschieden sind. Anschließend wird die Differenz der Mittelwerte berechnet und ihre gemeinsame Varianz. Liegt die Varianz dann über 0,05 spricht man von einer Varianzgleichheit und lehnt die Nullhypothese nicht ab. Sprich man geht schon einmal von einer Varianzgleichheit aus.
+Zunächst einmal testet der T - Test, ob die Mittelwerte der Grundgesamtheit verschieden sind. Anschließend wird die Differenz der Mittelwerte berechnet und ihre gemeinsame Varianz. Liegt die Varianz dann über 0,05 spricht man von einer Varianzgleichheit und lehnt die Nullhypothese nicht ab. Sprich, man geht schon einmal von einer Varianzgleichheit aus.
 
 Nach der Berechnung der gemeinsamen Varianz wird der t - Wert berechnet. Da dieser in PSPP angezeigt nicht großartig interpretierbar ist, schaut man sich für die Interpretation den p - Wert an. Jeder t - Wert hat nämlich einen p - Wert, welchen man sich ohne PSPP anhand des T - Wertes nachschlagen müsste.
 
