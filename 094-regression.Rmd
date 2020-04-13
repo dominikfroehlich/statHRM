@@ -12,9 +12,9 @@
 - verschiedene Fragestellungen möglich
     - Ursachenanalyse`r if(lec){": Wie stark ist der Einfluss der unabhängigen Variable auf die abhängige Variable?"}`
     - Wirkungsprognosen`r if(lec){": Wie verändert sich die abhängige Variable bei einer Änderung der unabhängigen Variablen?"}`
-    - Zeitreihenanalysen`r if(lec){": Wie verändert sich die abhängige Variable im Zeitablauf und somit ceteris paribus auch in der Zukunft"}`
+    - Zeitreihenanalysen`r if(lec){": Wie verändert sich die abhängige Variable im Zeitablauf und somit ceteris paribus auch in der Zukunft?"}`
 - Logik der linearen Regression
-    - die beobachteten Werte sollen auf eine gerade verdichtet werden
+    - die beobachteten Werte sollen auf eine Gerade verdichtet werden
     - die Differenzen zwischen der Gerade und den beobachteten Werten soll minimiert werden`r if(lec){": Summe der Quadrate der Fehler (e) wird minimiert"}`
 - bivariat und multivariat möglich
 
