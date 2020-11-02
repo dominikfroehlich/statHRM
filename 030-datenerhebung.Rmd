@@ -148,5 +148,5 @@ Daten umkodieren
 
 `r LINK("https://youtu.be/mhIirrb61BY")`
 
-Gütekrieterien: Ein Beispiel
+Gütekriterien: Ein Beispiel
 `r LINK("https://www.youtube.com/watch?v=PNJHwd4wF6U&t=37m00s")`

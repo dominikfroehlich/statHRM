@@ -2,7 +2,7 @@
 
 Die binäre logistische Regression ist vom Modell her ähnlich wie eine lineare Regression. Der wichtigste Unterschied ist, dass unsere abhängige Variable dichotom (binär) ist.
 
-# Odds und Log(Odds)
+## Odds und Log(Odds)
 - Wahrscheinlichkeit (p) ist die Gegenüberstellung eines möglichen Resultates X gegenüber allen möglichen Resultaten.
    - p = X/(X + nX)
 - Odds stellen die Ratio von Resultat X und nicht Resultat X (nX) dar
@@ -10,9 +10,9 @@ Die binäre logistische Regression ist vom Modell her ähnlich wie eine lineare 
 - Odds haben aber ein Problem der Asymmetrie: e.g. 1/6 und 6/1 betrachten das selbe Phänomen aus der anderern Perspektive, scheinen aber ganz unterschiedliche Zahlen zu sein. Log(Odds) behebt dieses Problem: log(1/6) = -1.79, log(6/1) = +1.79. Beide Zahlen sind gleich weit weg von 0 (=Symmetrie!).
 
 
-# Beispiel
+## Beispiel
 
-## Daten
+### Daten
 
 Für das Beispiel laden wir die Daten "regression1.csv" und dichotomisieren die Variable y (und setzen sie auch gleichzeitig als Faktor).
 
@@ -23,7 +23,7 @@ table(df$y.bi)
 df$sex <- as.factor(df$sex)
 ```
 
-## Einfache binäre logistische Regression: y.bi ~ sex
+### Einfache binäre logistische Regression: y.bi ~ sex
 ```{r}
 results <- glm(y.bi ~ sex, data = df, family="binomial")
 summary(results)
@@ -31,7 +31,7 @@ summary(results)
 
 - deviance gibt Auskunft über den "Fit"
 
-## Binäre logistische Regression: y.bi ~ x1 + x2 + sex
+### Binäre logistische Regression: y.bi ~ x1 + x2 + sex
 ```{r}
 results <- glm(y.bi ~ x1 + x2 + sex, data = df, family="binomial")
 summary(results)
@@ -57,7 +57,8 @@ ll.proposed <- results$deviance/-2
 ```
 
 
-Visualisierung
+### Visualisierung
+
 ```{r}
 # Daten mit Vorhersagen erzeugen (fitted.values)
 

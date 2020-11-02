@@ -30,7 +30,7 @@ TBA
 
 ### SPSS
 
-`r LINK(https://www.youtube.com/watch?v=CHT4yqM03bE"")`
+`r LINK("https://www.youtube.com/watch?v=CHT4yqM03bE")`
 
 `r if(!lec){"
 -------
