@@ -2,6 +2,23 @@
 
 ## IBM SPSS Statistics bzw. PSPP
 
+### PSPP: Probleme beim Öffnen von .csv Dateien in MacOS
+Wenn du die Fehlermeldung "Could not read the contents of..." bekommst, versuche folgende Lösungen
+
+- Lösche PSPP komplett, und installiere es neu (dazwischen am besten auch den Computer neustarten)
+- Importiere die Daten mittels "Drag und Drop"
+   - Öffne neben PSPP ein Finder Fenster , und wähle die Datei aus, die du importieren willst (Wichtig! Die Datei *muss* sich in deiner öffentlichen Mappe befinden, sonst bekommt man diesselbe Fehlermeldung)
+   - In PSPP, klicke auf "Datei" und dann "Daten importieren" (falls .csv Datei ist)
+   - Ziehe  die Datei vom Finder Fenster ins PSPP Fenster
+- Gib PSPP manuell Zugriff auf die Festplatte:
+   - Schließe PSPP
+   - Öffne Systemeinstellungen
+   - Geh zur "Sicherheit"
+   - Klicke auf "Datenschutz" (rechts oben)
+   - Klicke auf "Festplattenvollzugriff" in der linken Liste
+   - Mach das Schloss links unten auf
+   - Klicke auf "+" und wähle PSPP aus
+   - Schließe das Schloss und die Systemeinstellungen
 
 
 ### Dateiformate
