@@ -147,4 +147,7 @@ Was ist an folgenden Fragen gut/schlecht:
 ## Weiterführend
 
 `r LINK("https://youtu.be/BPoiA-2zjAc")`
+
+Fragebogenkonstruktion: Ein Beispiel
+`r LINK("https://www.youtube.com/watch?v=SHyQ6ErSWwE")`
    
