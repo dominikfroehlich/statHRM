@@ -1,4 +1,5 @@
 # Hypothesentests
+`r LINK("https://www.youtube.com/watch?v=7i3MouS8Fmw")`
 
 ## Anknüpfungspunkte
 - Konfidenzintervalle
