@@ -158,6 +158,7 @@ und, da es sich um ein **statistisch signifikantes Ergebnis** handelt
 11. SPSS verlangt nach einer Variable mit nur 2 Dimensionen.
 12. -
 
+`r LINK("https://www.youtube.com/watch?v=kluKVEs-PuY")`
 
 `r if(lec){"## Student Voice
 Der T-Test dient dem Vergleich zweier unabhängiger Stichproben bezüglich eines metrischen Merkmals. Die Vorrausetzung für den Test ist, dass die Daten mindestens intervallskaliert sind. Außerdem ist eine Normalverteilung der Daten wichtig. 
