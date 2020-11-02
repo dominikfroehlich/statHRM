@@ -139,7 +139,7 @@ Daten umkodieren
 `r LINK("https://youtu.be/H86eeEBsIdA")`
 
 ## Items zusammenfassen
-- Skalen bilden`r if(lec){": Items k?nnen zu Mittelwerten oder Summen zusammengefasst werden, um Skalen zu bilden."}`
+- Skalen bilden`r if(lec){": Items können zu Mittelwerten oder Summen zusammengefasst werden, um Skalen zu bilden."}`
 
 `r LINK("https://youtu.be/yXO5ST52Ufw")`
 
