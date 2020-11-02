@@ -73,6 +73,8 @@ Andere Erklärung: Die manifeste Variable ist eine festgesetzte Variable, die ma
 ## Übung mit Software
 - Öffne den Datensatz "Froehlich et al 2014 Daten 100.sav" mit einem Statistik-Programm deiner Wahl.
 - Identifiziere Variablen, Fälle und Werte.
+- Datensätze in Software
+`r LINK("https://www.youtube.com/watch?v=P3rMejsj6kY")` 
 
 
 ## Wiederholungsfragen
