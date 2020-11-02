@@ -53,3 +53,5 @@ Beispiel: [Der Fall Sally Clark](https://en.wikipedia.org/wiki/Sally_Clark)
 ![](flip/inferenz.png)
 
 > **Frage:** Welche Beispiele fallen dir im Rahmen von HRM für diese Ziele der Statistik ein?
+
+## Test
