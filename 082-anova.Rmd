@@ -64,9 +64,8 @@ anova.posthoc
 ```
 
 
-## [!!!] Exkurs: ANOVA mit der Hand
+## Exkurs: ANOVA mit der Hand
 
-Beispieldaten: http://www.mathandstatistics.com/learn-stats/hypothesis-testing/one-way-anova-by-hand
 
 ```{r anovaExkurs}
 n1 <- 70

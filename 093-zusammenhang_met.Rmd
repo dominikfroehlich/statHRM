@@ -56,8 +56,6 @@ plot(x1, y)
 abline(lm(y~x1), col="red")
 ```
 
-##Übung
-TBA
 
 
 `r if(!lec){"

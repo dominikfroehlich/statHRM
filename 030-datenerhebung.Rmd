@@ -107,9 +107,6 @@ Ratio       | x | x | x |x
 ### Aufgabe
 Öffne die Beispieldaten und den Beispielartikel und identifiziere die vorgestellten Begriffe.
 
-> **Video PSPP**: [Wird in der LV gedreht](TBA)
-
-> **Video SPSS**: [Wird in der LV gedreht](TBA)
 
 <!-- *****CLOSING CHUNK************ -->
 ## Übungen

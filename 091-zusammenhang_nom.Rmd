@@ -71,7 +71,9 @@ with(df, cv.test(df$org, df$sex))
 $$ V = \sqrt{\frac{\chi^2/n}{min(k-1, r-1)}}  $$
 
 ## Umsetzung in Software
-SPSS
+
+### SPSS
+
 `r LINK("https://www.youtube.com/watch?v=iJWHtoDViV4")`
 
 
