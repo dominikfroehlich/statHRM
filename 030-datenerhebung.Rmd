@@ -40,7 +40,7 @@ Man kann auch (insb. in der qualitativen Forschung) nach datengesteuerte Verfahr
 - Macht (Power) berechenbar
     - Abhängig von Komplexität des Modells
     - Abhängig von der größe der gesuchten Effekte
-- Daumenregel: Fälle:Variablen ca. 1:10-20 
+- Daumenregel: Variablen: Fälle ca. 1:10-20 
 
 ## Gütekriterien
 > **Frage:** Welche Kriterien fallen dir ein, die quantitative Forschung "gut" machen?
