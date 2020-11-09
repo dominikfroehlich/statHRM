@@ -39,7 +39,7 @@ Wichtige Datienformate sind
 R ist eine frei verfügbare, statistische Programmiersprache.
 
 ## Allgemeines
-R hat eine sehr aktive onine Community. Bei Fragen findet eine kurze Suche oft zu guten Lösungen -- nutze diese Möglichkeit! Es gibt bereits so viel Einführungsmaterial für R (auch auf Deutsch [@Manderscheid2012]), dass sich dieses Kapitel eigentlich erübrigt. Viele Texte enthalten aber viel zu viele Informationen, die ich für nicht notwendig für die Praxis bzw. den Einstieg in R erachte. Daher möchte ich ganz kurz die wichtigsten Befehle erwähnen; für das "Verstehen" der Inhalte muss aber eventuell in anderen Quellen nachgeschlagen werden.
+R hat eine sehr aktive onine Community. Bei Fragen führt eine kurze Suche oft zu guten Lösungen -- nutze diese Möglichkeit! Es gibt bereits so viel Einführungsmaterial für R (auch auf Deutsch [@Manderscheid2012]), dass sich dieses Kapitel eigentlich erübrigt. Viele Texte enthalten aber viel zu viele Informationen, die ich für nicht notwendig für die Praxis bzw. den Einstieg in R erachte. Daher möchte ich ganz kurz die wichtigsten Befehle erwähnen; für das "Verstehen" der Inhalte muss aber eventuell in anderen Quellen nachgeschlagen werden.
 
 ## Installation & Setup
 Neben der Installation von R empfehle ich die Installation von RStudio.
