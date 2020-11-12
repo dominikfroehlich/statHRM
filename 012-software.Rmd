@@ -35,6 +35,9 @@ Wichtige Datienformate sind
 - für Ausgaben
     - .spv
     
+### Installation von PSPP auf dem Mac
+`r LINK("https://www.youtube.com/watch?v=qzuOz8c9HVs")`  
+    
 ## R
 R ist eine frei verfügbare, statistische Programmiersprache.
 
