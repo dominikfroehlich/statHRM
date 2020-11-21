@@ -1,6 +1,7 @@
 # Lage und Streuung
 
 `r LINK("https://youtu.be/H4atBN72BgQ")`
+`r LINK("https://www.youtube.com/watch?v=8csTa3BVM5Q&t=06m05s")`
 
 ## Anknüpfungspunkte
 - Variablen
