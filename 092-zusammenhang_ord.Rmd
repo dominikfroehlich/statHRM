@@ -32,6 +32,8 @@ TBA
 
 `r LINK("https://www.youtube.com/watch?v=CHT4yqM03bE")`
 
+`r LINK("https://www.youtube.com/watch?v=mWDMvX00_m0&=23m00s")`
+
 `r if(!lec){"
 -------
 
