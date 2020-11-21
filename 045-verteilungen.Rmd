@@ -1,6 +1,7 @@
 # Verteilungen
 
 `r LINK("https://youtu.be/1gozoZ52UGQ")`
+`r LINK("https://www.youtube.com/watch?v=8csTa3BVM5Q&t=63m47s")`
 
 ## Anknüpfungspunkte
 - Lagemaße
