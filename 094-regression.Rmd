@@ -108,6 +108,9 @@ Interpretation: Insgesamt erklären die unabhängigen Variablen x1, x2 und sex (
 
 `r LINK("https://youtu.be/0NISYZiUvn4")`
 
+Multiple Regressionsanalyse
+´r LINK("https://www.youtube.com/watch?v=mWDMvX00_m0&t=57m30s")` 
+
 
 `r if(!lec){"
 -------
