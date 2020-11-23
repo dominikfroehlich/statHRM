@@ -5,6 +5,8 @@
 - Fragebogen
 - Daten (gekürzt auf n = 100)
 
+Du kannst die Daten [hier](https://dominikfroehlich.com/teaching/statistics/) herunterladen.
+
 ## Übersicht
 ```{r, message=FALSE, warning=FALSE, include=FALSE}
 fro <- read.csv2(file = "Data//Froehlich et al 2014 Daten 100.csv")

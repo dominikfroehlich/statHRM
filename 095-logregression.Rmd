@@ -1,4 +1,4 @@
-# Binäre logistische Regression
+# Logistische Regression
 
 Die binäre logistische Regression ist vom Modell her ähnlich wie eine lineare Regression. Der wichtigste Unterschied ist, dass unsere abhängige Variable dichotom (binär) ist.
 
