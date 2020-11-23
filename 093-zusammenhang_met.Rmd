@@ -56,6 +56,8 @@ plot(x1, y)
 abline(lm(y~x1), col="red")
 ```
 
+## Umsetzung in Software
+`r LINK("https://www.youtube.com/watch?v=mWDMvX00_m0&=23m00s")`
 
 
 `r if(!lec){"
