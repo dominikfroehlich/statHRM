@@ -154,3 +154,6 @@ TukeyHSD(anova, 'grp', conf.level=0.95)
 
 `r LINK("https://youtu.be/kdCCt56kFaA")`
 
+
+`r LINK("https://www.youtube.com/watch?v=LmKYrp7dbqQ&t=120m00s")`  
+
