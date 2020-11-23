@@ -247,6 +247,9 @@ Beachte bei der Interpretation...
 - die Mittelwerte der Gruppen von `r {unname(ttest$estimate[1])}` bzw. `r {unname(ttest$estimate[2])}`
 - die Voraussetzungen für den t-Test
 
+## Weitere Übungen
+`r LINK("https://www.youtube.com/watch?v=LmKYrp7dbqQ&t=19m30s")`
+
 `r if(!lec){"
 -------
 
