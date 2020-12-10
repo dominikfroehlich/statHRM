@@ -28,7 +28,7 @@ Wir wollen feststellen, ob es hinsichtlich des *Lernklimas* Unterschiede zwische
     - Korrektur um **$\alpha$-Inflation**`r if(lec){": bei mehrfachem Testen in derselben Grundgesamtheit steigt die Wahrscheinlichkeit einen Fehler 1. Art zu begehen mit der Anzahl der Testdurchführungen"}`
 
 ## Voraussetzungen ANOVA
-- Intervallskalierte Daten
+- Intervallskalierte Daten: `r if(lec){": Wenn Daten ordinal gemessen, auf Kruskal Wallis Test ausweichen"}`
 - Normalverteilung der abhängigen Variablen`r if(lec){": Wenn nicht gegeben auf Kruskal Wallis Test ausweichen"}`
 - Homogenität der Varianzen`r if(lec){": Wenn nicht gegeben auf Brown-Forsythe's F oder Welch's F ausweichen"}`
 
